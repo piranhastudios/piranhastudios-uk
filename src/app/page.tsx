@@ -1,57 +1,61 @@
-import { Container } from "@/components/Container";
-import { Hero } from "@/components/Hero";
-import { SectionTitle } from "@/components/SectionTitle";
-import { Benefits } from "@/components/Benefits";
-import { Video } from "@/components/Video";
-import { Testimonials } from "@/components/Testimonials";
-import { Faq } from "@/components/Faq";
-import { Cta } from "@/components/Cta";
+import {Container} from "@/components/Container";
+import {Hero} from "@/components/Hero";
+import {SectionTitle} from "@/components/SectionTitle";
+import {Benefits} from "@/components/Benefits";
+import {Video} from "@/components/Video";
+import {Testimonials} from "@/components/Testimonials";
+import {Faq} from "@/components/Faq";
+import {Cta} from "@/components/Cta";
 
-import { benefitOne, benefitTwo } from "@/components/data";
+import {benefitOne, benefitTwo} from "@/components/data";
+
 export default function Home() {
-  return (
-    <Container>
-      <Hero />
-      <SectionTitle
-        preTitle="Nextly Benefits"
-        title=" Why should you use this landing page"
-      >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
-      </SectionTitle>
+    return (
+        <Container>
+            <Hero/>
+            <span id={"benefits"}></span>
+            <SectionTitle
+                preTitle="Piranha Studios Benefits"
+                title=" Why should choose us"
+            >
+                Choose Piranha Studios for digital solutions that propel your business forward. We blend technical
+                expertise with business acumen to deliver custom websites, e-commerce platforms, and digital tools
+                tailored to your unique needs.
+            </SectionTitle>
 
-      <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} />
+            <Benefits data={benefitOne}/>
+            <Benefits imgPos="right" data={benefitTwo}/>
 
-      <SectionTitle
-        preTitle="Watch a video"
-        title="Learn how to fullfil your needs"
-      >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
-      </SectionTitle>
+            <SectionTitle
+                preTitle="Our Process"
+                title="How we deliver your vision"
+            >
+                At Piranha Studios, we&apos;re more than just developers—we&apos;re your digital partners. Our team of
+                experts
+                combines technical prowess with business acumen to deliver solutions that not only look great but drive
+                real results for your business.
+            </SectionTitle>
 
-      <Video videoId="fZ0D0cnR88E" />
+            <Video/>
 
-      <SectionTitle
-        preTitle="Testimonials"
-        title="Here's what our customers said"
-      >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
-      </SectionTitle>
+            <SectionTitle
+                preTitle="Testimonials"
+                title="Here's what our customers said"
+            >
+                We empower businesses across diverse industries to revolutionize their technological approach. From
+                healthcare to industrial retail and restaurants, our tailored solutions drive innovation and efficiency,
+                helping our clients leverage technology to transform their operations and achieve remarkable growth.
+            </SectionTitle>
 
-      <Testimonials />
+            <Testimonials/>
 
-      <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
+            <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
+                Answer your customers possible questions here, it will increase the
+                conversion rate as well as support or chat requests.
+            </SectionTitle>
 
-      <Faq />
-      <Cta />
-    </Container>
-  );
+            <Faq/>
+            <Cta/>
+        </Container>
+    );
 }

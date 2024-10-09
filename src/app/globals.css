@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   html,
   body {
     @apply dark:bg-trueGray-900;
+    scroll-behavior: smooth;
   }
 }
 
+/* Optional: If you want to target only anchor links */
+@layer utilities {
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}

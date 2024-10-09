@@ -1,59 +1,78 @@
 import {
-  FaceSmileIcon,
-  ChartBarSquareIcon,
-  CursorArrowRaysIcon,
-  DevicePhoneMobileIcon,
-  AdjustmentsHorizontalIcon,
-  SunIcon,
+    FaceSmileIcon,
+    ChartBarSquareIcon,
+    CursorArrowRaysIcon,
+    DevicePhoneMobileIcon,
+    AdjustmentsHorizontalIcon,
+    SunIcon,
 } from "@heroicons/react/24/solid";
 
 import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
+import {
+    BugAntSolid,
+    ChatBubbleLeftRight,
+    CommandLineSolid,
+    LightBulbSolid,
+    Pencil,
+    RocketLaunchSolid,
+    SparklesSolid, Swatch
+} from "@medusajs/icons";
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
-  image: benefitOneImg,
-  bullets: [
-    {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
-      icon: <FaceSmileIcon />,
-    },
-    {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
-      icon: <ChartBarSquareIcon />,
-    },
-    {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
-      icon: <CursorArrowRaysIcon />,
-    },
-  ],
+    title: "Why Choose Us ",
+    desc: "Choose Piranha Studios for unparalleled digital expertise and personalized service. We don't just build websites—we craft digital experiences that drive growth. Our team combines technical prowess with business insight to deliver solutions that truly work for you.",
+    image: <iframe width={521} height={521} allowTransparency className={"rounded-2xl"} src="https://lottie.host/embed/a45aecb6-8c8d-44af-b7a0-6e8d5f288ec8/huIqNpbmx7.json"></iframe>,
+    bullets: [
+        {
+            title: "Expertise",
+            desc: "Years of experience across various industries.",
+            icon: <LightBulbSolid/>,
+        },
+        {
+            title: "Customization",
+            desc: " Tailored solutions that fit your specific needs.",
+            icon: <Swatch/>,
+        },
+        {
+            title: "Support",
+            desc: "Ongoing assistance and updates to keep your digital assets running smoothly.",
+            icon: <BugAntSolid/>,
+        },
+        {
+            title: "Innovation",
+            desc: "We stay ahead of the curve with the latest technologies and best practices.",
+            icon: <SparklesSolid/>,
+        },
+    ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
-  image: benefitTwoImg,
-  bullets: [
-    {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
-      icon: <DevicePhoneMobileIcon />,
-    },
-    {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
-      icon: <AdjustmentsHorizontalIcon />,
-    },
-    {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
-      icon: <SunIcon />,
-    },
-  ],
+    title: "Our Approach",
+    desc: "Our approach blends listening, design, and development to create more than just products—we&apos;re your committed digital partner. With Piranha Studios, turn your vision into a results-driven online presence.",
+    image: <iframe width={521} height={521} allowTransparency className={"rounded-2xl"} src="https://lottie.host/embed/5903e474-cb48-4877-abe5-a2ade8cddd05/ZeLNhobu0s.json"></iframe>,
+    bullets: [
+        {
+            title: "Listen",
+            desc: "Nextly is designed as a mobile first responsive template.",
+            icon: <ChatBubbleLeftRight/>,
+        },
+        {
+            title: "Design",
+            desc: "This template is powered by latest technologies and tools.",
+            icon: <Pencil/>,
+        },
+        {
+            title: "Develop",
+            desc: "Nextly comes with a zero-config light & dark mode. ",
+            icon: <CommandLineSolid/>,
+        },
+        {
+            title: "Deploy",
+            desc: "Nextly comes with a zero-config light & dark mode. ",
+            icon: <RocketLaunchSolid/>,
+        },
+    ],
 };
 
 
