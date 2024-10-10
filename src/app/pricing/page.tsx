@@ -138,7 +138,59 @@ const PricingPage = () => {
             ]
         }
     ];
-
+    const consultingPricing = [
+        {
+            title: "Starter",
+            price: "400",
+            monthly: true,
+            hours: 8,
+            features: [
+                "8 hours of expert consulting",
+                "Monthly strategy session",
+                "Email support",
+                "Access to resource library"
+            ]
+        },
+        {
+            title: "Growth",
+            price: "700",
+            monthly: true,
+            hours: 20,
+            features: [
+                "20 hours of expert consulting",
+                "Bi-weekly strategy sessions",
+                "Priority email and phone support",
+                "Custom project planning",
+                "Access to premium resources"
+            ]
+        },
+        {
+            title: "Pro",
+            price: "1200",
+            monthly: true,
+            hours: 40,
+            features: [
+                "40 hours of expert consulting",
+                "Weekly strategy sessions",
+                "24/7 priority support",
+                "Dedicated account manager",
+                "Custom project planning and execution",
+                "Exclusive workshops and training"
+            ]
+        },
+        {
+            title: "Custom",
+            price: "Custom",
+            monthly: true,
+            hours: "Flexible",
+            features: [
+                "Tailored consulting package",
+                "Flexible hours allocation",
+                "Customized support and features",
+                "Enterprise-level solutions"
+            ]
+        }
+    ];
     const contentFeatures = [
         "£150 per page of content",
         "£60 per social media content post",
@@ -215,6 +267,7 @@ const PricingPage = () => {
                 </a>
             </div>
             <PricingSection title="Security Audit" items={securityAuditPricing}/>
+            <PricingSection title="Consulting Services" items={consultingPricing}/>
         </Container>
     );
 };
