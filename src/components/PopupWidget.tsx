@@ -26,7 +26,7 @@ export function PopupWidget() {
 
   const onSubmit = async (data: any, e: any) => {
     console.log(data);
-    await fetch("https://api.web3forms.com/submit", {
+    await fetch("https://hooks.zapier.com/hooks/catch/16082503/2mjtr7z/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
