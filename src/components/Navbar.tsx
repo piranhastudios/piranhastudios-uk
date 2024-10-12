@@ -72,7 +72,7 @@ export const Navbar = () => {
                                 <>
                                     {navigation.map((item: string, index) => (
                                         <Link key={index} href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                                              className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                                              className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-red-500 focus:text-red-500 focus:bg-red-100 dark:focus:bg-gray-800 focus:outline-none">
                                             {item}
                                         </Link>
                                     ))}
@@ -92,7 +92,7 @@ export const Navbar = () => {
                         {navigation.map((menu, index) => (
                             <li className="mr-3 nav__item" key={index}>
                                 <Link href={menu === "Home" ? "/" : `/${menu.toLowerCase()}`}
-                                      className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800">
+                                      className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-red-500 focus:text-red-500 focus:bg-red-100 focus:outline-none dark:focus:bg-gray-800">
                                     {menu}
                                 </Link>
                             </li>

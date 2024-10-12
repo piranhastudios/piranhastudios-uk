@@ -146,6 +146,10 @@ const PricingPage = () => {
             hours: 8,
             features: [
                 "8 hours of expert consulting",
+                "Website development",
+                "Ecommerce or Healthcare functionality",
+                "Access to 100+ Integrations",
+                "Monthly content post on 1 platform",
                 "Monthly strategy session",
                 "Email support",
                 "Access to resource library"
@@ -158,6 +162,11 @@ const PricingPage = () => {
             hours: 20,
             features: [
                 "20 hours of expert consulting",
+                "Website development",
+                "Ecommerce or Healthcare functionality",
+                "Access to 100+ Integrations",
+                "Custom Integration Development",
+                "Weekly content post on 3 platforms",
                 "Bi-weekly strategy sessions",
                 "Priority email and phone support",
                 "Custom project planning",
@@ -171,6 +180,11 @@ const PricingPage = () => {
             hours: 40,
             features: [
                 "40 hours of expert consulting",
+                "Website development",
+                "Ecommerce or Healthcare functionality",
+                "Access to 100+ Integrations",
+                "Custom Integration Development",
+                "Full Content Management",
                 "Weekly strategy sessions",
                 "24/7 priority support",
                 "Dedicated account manager",
@@ -185,6 +199,7 @@ const PricingPage = () => {
             hours: "Flexible",
             features: [
                 "Tailored consulting package",
+                "Fully custom software support for javascript technologies",
                 "Flexible hours allocation",
                 "Customized support and features",
                 "Enterprise-level solutions"
@@ -267,7 +282,7 @@ const PricingPage = () => {
                 </a>
             </div>
             <PricingSection title="Security Audit" items={securityAuditPricing}/>
-            <PricingSection title="Consulting Services" items={consultingPricing}/>
+            <PricingSection title="Managed Services" items={consultingPricing}/>
         </Container>
     );
 };
