@@ -239,7 +239,7 @@ const PricingPage = () => {
                     <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our
                         Pricing Plans</h1>
                     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">We offer a range of
-                        services to meet your digital needs. Choose the plan that works best for you.</p>
+                        services to meet your digital needs. Choose a package that works best for you.</p>
                 </div>
             </div>
 
@@ -256,15 +256,6 @@ const PricingPage = () => {
                 </div>
             </div>
             <FeaturesList features={contentFeatures}/>
-            <div className={"flex justify-center"}>
-                <a href="https://calendly.com/piranha-consultation/follow-up-meeting"
-                   className="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-red-900">
-                    Book a Consultation
-                </a>
-            </div>
-
-            <PricingSection title="Hosting + Maintenance" items={hostingPricing}/>
-
             <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                 <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">SEO
@@ -281,7 +272,10 @@ const PricingPage = () => {
                     Book a Consultation
                 </a>
             </div>
-            <PricingSection title="Security Audit" items={securityAuditPricing}/>
+            <PricingSection title="Hosting + Maintenance" items={hostingPricing}/>
+
+
+            {/*<PricingSection title="Security Audit" items={securityAuditPricing}/>*/}
             <PricingSection title="Managed Services" items={consultingPricing}/>
         </Container>
     );

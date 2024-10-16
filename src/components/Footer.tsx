@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import {Container} from "@/components/Container";
+import {FaTiktok} from "react-icons/fa";
 
 export function Footer() {
     const navigation = [
@@ -86,15 +87,15 @@ export function Footer() {
                         <div>Follow us</div>
                         <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
                             <a
-                                href="https://twitter.com/web3templates"
+                                href="https://www.tiktok.com/@piranha_studios?_t=8qaWzxIU3bE&_r=1"
                                 target="_blank"
                                 rel="noopener"
                             >
                                 <span className="sr-only">Twitter</span>
-                                <Twitter/>
+                                <FaTiktok className={"h-full"} style={{marginTop: "1.5px"}}/>
                             </a>
                             <a
-                                href="https://facebook.com/web3templates"
+                                href="https://www.facebook.com/profile.php?id=61556593229991"
                                 target="_blank"
                                 rel="noopener"
                             >
@@ -102,14 +103,14 @@ export function Footer() {
                                 <Facebook/>
                             </a>
                             <a
-                                href="https://instagram.com/web3templates"
+                                href="https://www.instagram.com/piranhastudioss/"
                                 target="_blank"
                                 rel="noopener"
                             >
                                 <span className="sr-only">Instagram</span>
                                 <Instagram/>
                             </a>
-                            <a href="https://linkedin.com/" target="_blank" rel="noopener">
+                            <a href="https://www.linkedin.com/company/piranha-studios-solutions" target="_blank" rel="noopener">
                                 <span className="sr-only">Linkedin</span>
                                 <Linkedin/>
                             </a>

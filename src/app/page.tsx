@@ -16,7 +16,7 @@ export default function Home() {
             <span id={"benefits"}></span>
             <SectionTitle
                 preTitle="Piranha Studios Benefits"
-                title=" Why should choose us"
+                title=" Why choose us?"
             >
                 Choose Piranha Studios for digital solutions that propel your business forward. We blend technical
                 expertise with business acumen to deliver custom websites, e-commerce platforms, and digital tools
@@ -50,8 +50,7 @@ export default function Home() {
             <Testimonials/>
 
             <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
-                Answer your customers possible questions here, it will increase the
-                conversion rate as well as support or chat requests.
+                Answers to some of the common questions asked by our customers.
             </SectionTitle>
 
             <Faq/>
