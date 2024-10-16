@@ -37,19 +37,19 @@ export const Testimonials = () => {
             />
           </div>
         </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              I really like the monthly package, it really shows you&apos;re <Mark>dedication</Mark> to growing with us.
-            </p>
+        {/*<div className="">*/}
+        {/*  <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">*/}
+        {/*    <p className="text-2xl leading-normal ">*/}
+        {/*      I really like the monthly package, it really shows you&apos;re <Mark>dedication</Mark> to growing with us.*/}
+        {/*    </p>*/}
 
-            <Avatar
-              image={userThreeImg}
-              name="Rob Barnfield"
-              title="Founder and owner of Elite Oils"
-            />
-          </div>
-        </div>
+        {/*    <Avatar*/}
+        {/*      image={userThreeImg}*/}
+        {/*      name="Rob Barnfield"*/}
+        {/*      title="Founder and owner of Elite Oils"*/}
+        {/*    />*/}
+        {/*  </div>*/}
+        {/*</div>*/}
       </div>
     </Container>
   );
