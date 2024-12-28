@@ -85,7 +85,7 @@ export function Footer() {
                     </div>
                     <div className="">
                         <div>Follow us</div>
-                        <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
+                        <div className="flex my-5 space-x-5 text-gray-400 dark:text-gray-500">
                             <a
                                 href="https://www.tiktok.com/@piranha_studios?_t=8qaWzxIU3bE&_r=1"
                                 target="_blank"
@@ -110,11 +110,13 @@ export function Footer() {
                                 <span className="sr-only">Instagram</span>
                                 <Instagram/>
                             </a>
-                            <a href="https://www.linkedin.com/company/piranha-studios-solutions" target="_blank" rel="noopener">
+                            <a href="https://www.linkedin.com/company/piranha-studios-solutions" target="_blank"
+                               rel="noopener">
                                 <span className="sr-only">Linkedin</span>
                                 <Linkedin/>
                             </a>
                         </div>
+                        <a className={"text-red-500"} href={'tel:+442045872999'}>Phone: +44 20 4587 2999</a>
                     </div>
                 </div>
 
