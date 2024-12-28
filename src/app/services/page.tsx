@@ -156,8 +156,8 @@ const SolutionsPage = () => {
           </h1>
           <p className="text-xl text-gray-600">
             We build flexible, powerful online stores that adapt to your business needs.
-            Whether you're selling to businesses or consumers, locally or globally,
-            we'll help you create a solution that grows with your success.
+            Whether you:&apos;re selling to businesses or consumers, locally or globally,
+            we:&apos;ll help you create a solution that grows with your success.
           </p>
           <div className="mt-8">
             <a
@@ -194,7 +194,7 @@ const SolutionsPage = () => {
         <div className="max-w-3xl mx-auto text-center bg-gray-50 rounded-2xl p-12">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's discuss how our modern commerce solutions can help you achieve your goals.
+            Let:&apos;s discuss how our modern commerce solutions can help you achieve your goals.
           </p>
           <a
             href="https://calendly.com/piranha-consultation/follow-up-meeting"
