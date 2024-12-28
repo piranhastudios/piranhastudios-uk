@@ -7,7 +7,7 @@ import {FaTiktok} from "react-icons/fa";
 export function Footer() {
     const navigation = [
         "Home",
-        "Pricing",
+        "Services",
         "Team",
     ];
     const legal = ["Terms", "Privacy", "Legal"];
