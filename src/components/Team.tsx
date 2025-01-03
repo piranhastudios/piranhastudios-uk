@@ -19,14 +19,6 @@ const teamMembers = [
         ]
     },
     {
-        id: 2,
-        name: 'Nathan Wright',
-        role: 'Finance Director',
-        imageUrl: '/img/team/placeholder.jpg',
-        bio: 'With adept skill and a keen eye for numbers, Nathan ensures our financial success.',
-        links: []
-    },
-    {
         id: 3,
         name: 'Ells Turner',
         role: 'Compliance Director',
@@ -57,14 +49,6 @@ const teamMembers = [
         ]
     },
     {
-        id: 6,
-        name: 'Taylor Stinson',
-        role: 'Tech Lead',
-        imageUrl: '/img/team/taylor.jpeg',
-        bio: "Taylor leads our tech team, bringing expertise in software engineering, mentoring, and project management.",
-        links: []
-    },
-    {
         id: 7,
         name: 'Navid Nami',
         role: 'Software Developer',
@@ -80,14 +64,6 @@ const teamMembers = [
         bio: 'Kiran brings creative flair to our projects, ensuring visually appealing and user-friendly designs.',
         links: []
     },
-    {
-        id: 9,
-        name: 'Florian Geense',
-        role: 'Business Analyst Consultant',
-        imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQECZUZEA0WCtA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1722278329937?e=1729123200&v=beta&t=nwsR43fVddnP79ekwkMJizMN96alodtXkL2m3H6lNv4",
-        bio: 'Florian provides valuable insights and analysis to guide our business strategies and decision-making processes.',
-        links: []
-    }
 ];
 
 
