@@ -2,14 +2,18 @@
 const nextConfig = {
     async rewrites() {
         return [
-          {
-            source: '/:path*',
-            destination: 'https://hooks.zapier.com/hooks/catch/16082503/2mjtr7z/',
-          },
-        ]
-      },
-  };
+            {
+                source: '/:path*',
+                destination: 'https://hooks.zapier.com/hooks/catch/16082503/2mjtr7z/',
+            },
+        ];
+    },
+};
 
-const withVercelToolbar = require('@vercel/toolbar/plugins/next')();
-// Instead of module.exports = nextConfig, do this:
-module.exports = withVercelToolbar(nextConfig);
+// Dynamically import `@vercel/toolbar/plugins/next`
+async function loadConfig() {
+    const withVercelToolbar = (await import('@vercel/toolbar/plugins/next')).default;
+    return withVercelToolbar(nextConfig);
+}
+
+module.exports = loadConfig();
