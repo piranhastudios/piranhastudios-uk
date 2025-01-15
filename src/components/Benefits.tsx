@@ -26,9 +26,7 @@ export const Benefits = (props: Readonly<BenefitsProps>) => {
                     props.imgPos === "right" ? "lg:order-1" : ""
                 }`}
             >
-                <div>
                     {data.image}
-                </div>
             </div>
 
             <div

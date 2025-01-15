@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Hero = () => {
     return (
         <>
-            <Container className="flex flex-wrap ">
+            <Container className="flex min-h-screen flex-wrap ">
                 <div className="flex items-center w-full lg:w-1/2">
                     <div className="max-w-2xl mb-8">
                         <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
@@ -36,7 +36,7 @@ export const Hero = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center justify-center w-full lg:w-1/2">
+                <div className="flex justify-center w-full lg:w-1/2">
                     <iframe
                         src="https://lottie.host/embed/7df4062f-b98a-4682-8843-ba12dea182ba/yzqTsY2u51.json"
                         className="object-cover rounded-2xl"
@@ -48,6 +48,8 @@ export const Hero = () => {
                     ></iframe>
                 </div>
             </Container>
+            {/*
+            TODO: Uncomment this section when we have more clients
             <Container>
                 <div className="flex flex-col justify-center mb-16">
                     <div className="text-xl text-center text-gray-700 dark:text-white">
@@ -74,7 +76,7 @@ export const Hero = () => {
                         ))}
                     </div>
                 </div>
-            </Container>
+            </Container>*/}
         </>
     );
 }
