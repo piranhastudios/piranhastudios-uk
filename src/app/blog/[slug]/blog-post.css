@@ -1,0 +1,37 @@
+/* CSS File for Spacing */
+.prose {
+    /* Spacing for the container div */
+
+    div {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 800px;
+        box-sizing: border-box;
+    }
+
+    /* Paragraph spacing */
+
+    p {
+        margin: 16px 0;
+    }
+
+    /* Headings */
+
+    h4 {
+        margin: 24px 0 12px;
+        font-weight: bold;
+    }
+
+    /* Bold text inside headings or elsewhere */
+
+    strong {
+        font-weight: bold;
+    }
+
+    /* Ensure consistent spacing for empty paragraphs */
+
+    p:empty {
+        margin: 8px 0; /* Minimal space to avoid collapsing */
+    }
+
+}

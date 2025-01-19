@@ -9,6 +9,7 @@ export const Navbar = () => {
         "Home",
         "Services",
         "Team",
+        "Blog"
     ];
 
     return (
