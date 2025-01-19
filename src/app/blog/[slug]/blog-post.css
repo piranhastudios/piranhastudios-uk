@@ -34,4 +34,7 @@
         margin: 8px 0; /* Minimal space to avoid collapsing */
     }
 
+    a {
+        @apply text-red-500
+    }
 }
