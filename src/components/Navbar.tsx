@@ -8,7 +8,8 @@ export const Navbar = () => {
     const navigation = [
         "Home",
         "Services",
-        "Team",
+        // "Team",
+        "Blog"
     ];
 
     return (
