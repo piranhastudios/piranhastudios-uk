@@ -28,7 +28,7 @@ export default async function IndexPage() {
 
     return (
         <main className="min-h-screen flex flex-col items-center">
-            <div className={"max-w-screen-lg"}>
+            <div className={"max-w-screen-xl"}>
                 <h1 className="text-4xl mb-8 px-4">Piranha Studios Blog</h1>
                 {/*
              TODO: add when we have more blog posts in different categories
@@ -55,7 +55,7 @@ export default async function IndexPage() {
                     />
                 </section>
             </div>
-            <div className={"lg:max-w-[75%]"}>
+            <div className={"lg:max-w-screen-xl"}>
 
                 {/* Latest Posts Section */}
                 <section className="px-4 py-8 md:px-6 lg:px-8">
