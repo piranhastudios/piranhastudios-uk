@@ -430,7 +430,7 @@ export default function QuestionnaireForm() {
                                 </div>
                             ) : (
                                 <>
-                                    <h2 className="text-xl font-semibold mb-4">📌 Final Step: Budget & Contact Info</h2>
+                                    <h2 className="text-xl font-semibold mb-4">📌 How much would you look to spend on improving your digital experience?</h2>
                                     <div className="space-y-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                                         <div>
                                             <label
@@ -453,6 +453,48 @@ export default function QuestionnaireForm() {
                                                 <p className="text-red-500 text-sm flex items-center gap-1 mt-1">
                                                     <AlertCircle className="h-4 w-4"/>
                                                     {errors.budget}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </div>
+                                    <h2 className="text-xl font-semibold mb-4">📌 Get Your Free Digital Strategy
+                                        Guide!</h2>
+                                    <div className="space-y-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
+                                        <h3 className="font-medium text-gray-800 dark:text-white">💡 As a thank-you,
+                                            you&apos;ll
+                                            receive:</h3>
+                                        <ul className="space-y-2 list-none pl-6 text-gray-600 dark:text-gray-300">
+                                            <li className="flex items-center space-x-2">
+                                                <span className="text-emerald-500 dark:text-emerald-400">✓</span>
+                                                <span>How to optimize your website for speed and security</span>
+                                            </li>
+                                            <li className="flex items-center space-x-2">
+                                                <span className="text-emerald-500 dark:text-emerald-400">✓</span>
+                                                <span>Understanding Google&apos;s AI-powered search and SEO</span>
+                                            </li>
+                                            <li className="flex items-center space-x-2">
+                                                <span className="text-emerald-500 dark:text-emerald-400">✓</span>
+                                                <span>The importance of omnichannel strategies</span>
+                                            </li>
+                                        </ul>
+                                        <div className="mt-4">
+                                            <label
+                                                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                                                Email address
+                                            </label>
+                                            <input
+                                                type="email"
+                                                value={formData.email}
+                                                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                                className={`w-full px-3 py-2 border rounded-md ${
+                                                    errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                                                } bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent`}
+                                                placeholder="Enter your email"
+                                            />
+                                            {errors.email && (
+                                                <p className="text-red-500 text-sm flex items-center gap-1 mt-1">
+                                                    <AlertCircle className="h-4 w-4"/>
+                                                    {errors.email}
                                                 </p>
                                             )}
                                         </div>
