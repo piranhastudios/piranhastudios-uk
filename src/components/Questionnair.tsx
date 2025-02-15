@@ -423,14 +423,21 @@ export default function QuestionnaireForm() {
                                         🎉 Success! Your Digital Strategy Guide is on the way.
                                     </h2>
                                     <p className="text-gray-700 dark:text-gray-300 mt-2">
-                                        Thank you for signing up! We&apos;ve sent your guide
+                                        Thank you for signing up! We've sent your guide
                                         to <strong>{formData.email}</strong>.
                                         Check your inbox (and spam folder) for the download link.
+                                    </p>
+                                    <p className="text-gray-600 dark:text-gray-400 mt-4">
+                                        Need further guidance? <a
+                                        href="https://calendly.com/piranha-consultation/follow-up-meetingq"
+                                        className="text-blue-600 dark:text-blue-400 font-semibold hover:underline">Book
+                                        a free consultation</a>.
                                     </p>
                                 </div>
                             ) : (
                                 <>
-                                    <h2 className="text-xl font-semibold mb-4">📌 How much would you look to spend on improving your digital experience?</h2>
+                                    <h2 className="text-xl font-semibold mb-4">📌 How much would you look to spend on
+                                        improving your digital experience?</h2>
                                     <div className="space-y-4 bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
                                         <div>
                                             <label
