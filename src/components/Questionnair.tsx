@@ -423,7 +423,7 @@ export default function QuestionnaireForm() {
                                         🎉 Success! Your Digital Strategy Guide is on the way.
                                     </h2>
                                     <p className="text-gray-700 dark:text-gray-300 mt-2">
-                                        Thank you for signing up! We've sent your guide
+                                        Thank you for signing up! We&apos;ve sent your guide
                                         to <strong>{formData.email}</strong>.
                                         Check your inbox (and spam folder) for the download link.
                                     </p>
