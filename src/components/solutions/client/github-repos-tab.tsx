@@ -34,6 +34,47 @@ export default function ThemesTab() {
         )
     }
 
+    // Show coming soon message if there are no themes
+    if (themes.length === 0) {
+        return (
+            <div className="flex flex-col items-center justify-center py-16 text-center">
+                <div className="bg-gray-100 dark:bg-zinc-800 rounded-full p-4 mb-4">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-red-500"
+                    >
+                        <path d="M12 2v4"></path>
+                        <path d="M12 18v4"></path>
+                        <path d="m4.93 4.93 2.83 2.83"></path>
+                        <path d="m16.24 16.24 2.83 2.83"></path>
+                        <path d="M2 12h4"></path>
+                        <path d="M18 12h4"></path>
+                        <path d="m4.93 19.07 2.83-2.83"></path>
+                        <path d="m16.24 7.76 2.83-2.83"></path>
+                    </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Themes Coming Soon!</h3>
+                <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8">
+                    We're working on some amazing themes for you. Check back soon to see our collection of professionally designed themes.
+                </p>
+                <Link
+                    href="https://calendly.com/piranha-consultation/follow-up-meeting"
+                    className="inline-block px-6 py-3 bg-red-500 text-white hover:bg-red-600 font-medium rounded-md transition-colors"
+                >
+                    Get one designed for you right now!
+                </Link>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -95,12 +136,11 @@ export default function ThemesTab() {
                 ))}
             </div>
             <div className="text-center">
-                <Link
-                    href="/themes"
+                <div
                     className="inline-block px-6 py-3 border border-red-500 text-red-500 hover:bg-red-500/10 font-medium rounded-md transition-colors"
                 >
-                    Explore All Themes
-                </Link>
+                    More Themes
+                </div>
             </div>
         </>
     )

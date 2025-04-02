@@ -61,42 +61,7 @@ export default function NpmPackagesTab() {
             ))}
             <div className="p-5">
               <div className="flex items-center gap-4 text-sm text-gray-400">
-                <div className="flex items-center">
-                  <svg
-                    className="mr-1 h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  {pkg.downloads}
-                </div>
-                <div className="flex items-center">
-                  <svg
-                    className="mr-1 h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                  {pkg.stars}
-                </div>
+                <img src={`https://img.shields.io/npm/dw/${pkg.name}`} alt="npm" className="h-4"/>
               </div>
               <div className="mt-4 p-3 bg-gray-100 dark:bg-black rounded text-sm font-mono text-gray-800 dark:text-gray-300">
                 npm install {pkg.name}

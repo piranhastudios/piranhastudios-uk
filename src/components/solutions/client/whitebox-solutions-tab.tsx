@@ -58,27 +58,16 @@ export default function WhiteboxSolutionsTab() {
                 ))}
               </ul>
             </div>
-
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div className="border border-gray-200 dark:border-zinc-800 rounded p-3">
-                <h5 className="font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">Solution Management Fee</h5>
-                <p className="text-xl font-bold text-red-500">£{solution.managementFee}</p>
-              </div>
-              <div className="border border-gray-200 dark:border-zinc-800 rounded p-3">
-                <h5 className="font-medium text-sm text-gray-700 dark:text-gray-300 mb-1">Installation and Customisation</h5>
-                <p className="text-xl font-bold text-red-500">£{solution.installationPrice}</p>
-              </div>
-            </div>
           </div>
           <div className="p-5 border-t border-gray-200 dark:border-zinc-800 flex justify-between">
             <Link
-              href={`/solutions/${solution.slug}`}
+              href={`/solutions?slug=${solution.slug}`}
               className="inline-block px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-md transition-colors"
             >
               Learn More
             </Link>
             <Link
-              href={solution.demoUrl}
+              href={`/demos?slug=${solution.slug}`}
               className="inline-block px-4 py-2 border border-red-500 text-red-500 hover:bg-red-500/10 font-medium rounded-md transition-colors"
             >
               View Demo

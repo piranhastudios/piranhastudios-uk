@@ -36,38 +36,38 @@ export async function getThemes(): Promise<Theme[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([
-        {
-          name: "Blog",
-          description: "A sleek, mobile-first blog theme for high-converting stores.",
-          framework: ["Next.js", "WordPress"],
-          style: "Minimalist",
-          image: "/themes/modern-commerce.png",
-          demoUrl: "/demos/modern-commerce",
-        },
-        {
-          name: "Classic Storefront",
-          description: "A timeless, grid-based layout ideal for traditional online shops.",
-          framework: "React",
-          style: "Classic",
-          image: "/themes/classic-storefront.png",
-          demoUrl: "/demos/classic-storefront",
-        },
-        {
-          name: "Luxury Boutique",
-          description: "A high-end, premium design perfect for luxury brands.",
-          framework: "Next.js",
-          style: "Elegant",
-          image: "/themes/luxury-boutique.png",
-          demoUrl: "/demos/luxury-boutique",
-        },
-        {
-          name: "Tech Marketplace",
-          description: "A modern theme built for tech and digital product marketplaces.",
-          framework: "Next.js",
-          style: "Futuristic",
-          image: "/themes/tech-marketplace.png",
-          demoUrl: "/demos/tech-marketplace",
-        },
+        // {
+        //   name: "Blog",
+        //   description: "A sleek, mobile-first blog theme for high-converting stores.",
+        //   framework: ["Next.js", "WordPress"],
+        //   style: "Minimalist",
+        //   image: "/themes/modern-commerce.png",
+        //   demoUrl: "/demos/modern-commerce",
+        // },
+        // {
+        //   name: "Classic Storefront",
+        //   description: "A timeless, grid-based layout ideal for traditional online shops.",
+        //   framework: "React",
+        //   style: "Classic",
+        //   image: "/themes/classic-storefront.png",
+        //   demoUrl: "/demos/classic-storefront",
+        // },
+        // {
+        //   name: "Luxury Boutique",
+        //   description: "A high-end, premium design perfect for luxury brands.",
+        //   framework: "Next.js",
+        //   style: "Elegant",
+        //   image: "/themes/luxury-boutique.png",
+        //   demoUrl: "/demos/luxury-boutique",
+        // },
+        // {
+        //   name: "Tech Marketplace",
+        //   description: "A modern theme built for tech and digital product marketplaces.",
+        //   framework: "Next.js",
+        //   style: "Futuristic",
+        //   image: "/themes/tech-marketplace.png",
+        //   demoUrl: "/demos/tech-marketplace",
+        // },
       ])
     }, 500)
   })
@@ -82,7 +82,7 @@ export async function getWhiteboxSolutions(): Promise<WhiteboxSolution[]> {
           name: "Healthcare Commerce",
           slug: "healthcare-commerce",
           description: "Specialized e-commerce solution for healthcare products and services.",
-          image: "/placeholder.svg?height=300&width=600",
+          image: "/healthcare-demo-thumbnail.png",
           features: [
             "Compliant with healthcare regulations",
             "Prescription management",
@@ -92,13 +92,13 @@ export async function getWhiteboxSolutions(): Promise<WhiteboxSolution[]> {
           ],
           installationPrice: 1499,
           managementFee: 200,
-          demoUrl: "/demos/healthcare-commerce",
+          demoUrl: "https://demo-eight-murex.vercel.app/gb",
         },
         {
           name: "Marketplace",
           slug: "marketplace",
           description: "A complete multivendor marketplace solution for online businesses.",
-          image: "/placeholder.svg?height=300&width=600",
+          image: "/ice-cold-lemon-demo.png",
           features: [
             "Vendor onboarding and management",
             "Commission and fee structure",
@@ -108,13 +108,13 @@ export async function getWhiteboxSolutions(): Promise<WhiteboxSolution[]> {
           ],
           installationPrice: 1999,
           managementFee: 200,
-          demoUrl: "/demos/marketplace",
+          demoUrl: "https://v0-medusa-resale-marketplace.vercel.app",
         },
         {
           name: "E-Commerce Solution",
           slug: "ecommerce-solution",
           description: "A customizable, full-featured online store solution with secure payment integration.",
-          image: "/placeholder.svg?height=300&width=600",
+          image: "/e-commerce-demo-thumbnail.png",
           features: [
             "Product and inventory management",
             "Customizable storefront design",
@@ -124,24 +124,8 @@ export async function getWhiteboxSolutions(): Promise<WhiteboxSolution[]> {
           ],
           installationPrice: 999,
           managementFee: 75,
-          demoUrl: "/demos/ecommerce-solution",
+          demoUrl: "https://v0-high-end-fashion-website.vercel.app",
         },
-        {
-          name: "POS System",
-          slug: "pos-system",
-          description: "A seamless Point of Sale (POS) system integrated with online and offline channels.",
-          image: "/placeholder.svg?height=300&width=600",
-          features: [
-            "Offline-first architecture",
-            "Integration with receipt printers & barcode scanners",
-            "Role-based staff management",
-            "Real-time inventory sync",
-            "Unified online/offline order management",
-          ],
-          installationPrice: 999,
-          managementFee: 75,
-          demoUrl: "/demos/pos-system",
-        }
       ]);
     }, 500);
   });
