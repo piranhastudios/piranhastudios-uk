@@ -11,9 +11,6 @@ const nextConfig = {
 };
 
 // Dynamically import `@vercel/toolbar/plugins/next`
-async function loadConfig() {
-    const withVercelToolbar = (await import('@vercel/toolbar/plugins/next')).default;
-    return withVercelToolbar(nextConfig);
-}
+const withVercelToolbar = require('@vercel/toolbar/plugins/next')();
 
-module.exports = loadConfig();
+module.exports = withVercelToolbar(nextConfig);
