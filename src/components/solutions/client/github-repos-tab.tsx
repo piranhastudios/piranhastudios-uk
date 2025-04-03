@@ -63,7 +63,7 @@ export default function ThemesTab() {
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Themes Coming Soon!</h3>
                 <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8">
-                    We're working on some amazing themes for you. Check back soon to see our collection of professionally designed themes.
+                    We&apos;re working on some amazing themes for you. Check back soon to see our collection of professionally designed themes.
                 </p>
                 <Link
                     href="https://calendly.com/piranha-consultation/follow-up-meeting"
