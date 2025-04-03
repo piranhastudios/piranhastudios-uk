@@ -1,9 +1,9 @@
 'use client'
 
-import { useRouter, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { getWhiteboxSolutions } from '@/lib/data'
-import { WhiteboxSolution } from '@/types/globals'
+import {useRouter, useSearchParams} from 'next/navigation'
+import {Suspense, useEffect, useState} from 'react'
+import {getWhiteboxSolutions} from '@/lib/data'
+import {WhiteboxSolution} from '@/types/globals'
 
 export default function DemoPage() {
     const router = useRouter()
@@ -32,19 +32,22 @@ export default function DemoPage() {
     }
 
     return (
-        <div className="flex flex-col min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
-            <header className="bg-red-500 text-white py-4">
-                <div className="container mx-auto px-4 flex items-center justify-between">
-                    <h1 className="text-lg font-medium">Demo: {solution.name}</h1>
-                    <button type="button" onClick={() => router.push('/solutions')} className="text-sm hover:underline">
-                        Back to Solutions
-                    </button>
-                </div>
-            </header>
+        <Suspense>
+            <div className="flex flex-col min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white">
+                <header className="bg-red-500 text-white py-4">
+                    <div className="container mx-auto px-4 flex items-center justify-between">
+                        <h1 className="text-lg font-medium">Demo: {solution.name}</h1>
+                        <button type="button" onClick={() => router.push('/solutions')}
+                                className="text-sm hover:underline">
+                            Back to Solutions
+                        </button>
+                    </div>
+                </header>
 
-            <main className="flex-1 flex flex-col items-center justify-center p-4">
-                <iframe  src={solution.demoUrl} className="w-full h-screen" />
-            </main>
-        </div>
+                <main className="flex-1 flex flex-col items-center justify-center p-4">
+                    <iframe src={solution.demoUrl} className="w-full h-screen"/>
+                </main>
+            </div>
+        </Suspense>
     )
 }
