@@ -7,7 +7,7 @@
 // import {Team as TeamList} from "@/components/Team";
 // import {Cta} from "@/components/Cta";
 //
-// import {benefitOne, benefitTwo} from "@/components/data";
+// import {benefitOne, benefitTwo} from "@/components/data.ts";
 import {redirect} from "next/navigation";
 
 export default function Team() {
