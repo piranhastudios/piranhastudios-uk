@@ -12,12 +12,18 @@ export function ContactSection() {
     budget: '',
     message: ''
   })
-  const [errors, setErrors] = useState({})
+  type Errors = {
+    name?: string
+    email?: string
+    budget?: string
+    message?: string
+  }
+  const [errors, setErrors] = useState<Errors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success' | 'error'
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null) // 'success' | 'error'
 
   const validateForm = () => {
-    const newErrors = {}
+    const newErrors: Errors = {}
 
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required'
@@ -35,14 +41,13 @@ export function ContactSection() {
       newErrors.message = 'Please provide more details about your project (at least 10 characters)'
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
+    return Object.keys(newErrors).length === 0 ? true : (setErrors(newErrors), false)
   }
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: keyof typeof formData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
     // Clear error when user starts typing
-    if (errors[field]) {
+    if (errors[field as keyof Errors]) {
       setErrors(prev => ({ ...prev, [field]: '' }))
     }
   }
@@ -97,7 +102,7 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-[#fca5a5] mr-3" />
-                  <span className="text-[#9ca3af]">hello@piranhastudios.co.uk</span>
+                  <span className="text-[#9ca3af]">info@piranhastudios.co.uk</span>
                 </div>
                 <div className="flex items-center">
                   <MessageSquare className="h-5 w-5 text-[#fca5a5] mr-3" />
