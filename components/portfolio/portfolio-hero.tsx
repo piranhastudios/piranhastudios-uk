@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Users } from "lucide-react"
+import { CalendlyUrls } from "@/lib/data/calendly"
+import { ArrowRight, Code, Link, Users } from "lucide-react"
 
 export function PortfolioHero() {
   return (
@@ -55,13 +56,15 @@ export function PortfolioHero() {
         </div>
 
         {/* CTA */}
-        <Button
-          size="lg"
-          className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
-        >
-          Start Your Project
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
+        <Link href={CalendlyUrls.evaluation_url} target="_blank">
+          <Button
+            size="lg"
+            className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
+          >
+            Start Your Project
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </Link>
       </div>
     </section>
   )
