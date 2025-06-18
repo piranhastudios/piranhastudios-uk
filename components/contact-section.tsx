@@ -62,7 +62,7 @@ export function ContactSection() {
       const response = await fetch('https://hooks.zapier.com/hooks/catch/18437871/uo5gym9/', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain',
         },
         body: JSON.stringify({
           name: formData.name.trim(),
