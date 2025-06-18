@@ -18,9 +18,9 @@ const pricingTiers = [
   },
   {
     name: "Scale",
-    price: "£5,000 flat fee",
+    price: "£500-£5,000 flat fee",
     description: "Full MVP build — no rev share",
-    features: ["Complete MVP", "Full ownership", "Documentation", "30-day support"],
+    features: ["Complete MVP", "Full ownership", "Documentation", "30-day support", "payment plans available"],
     popular: true,
   },
   {
@@ -84,11 +84,10 @@ export function ServicesSection() {
           {pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 hover:scale-105 ${
-                tier.popular
+              className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 hover:scale-105 flex flex-col justify-between ${tier.popular
                   ? "border-[#fca5a5]/50 shadow-2xl shadow-[#fca5a5]/20"
                   : "border-white/10 hover:border-[#fca5a5]/30"
-              }`}
+                }`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -110,18 +109,17 @@ export function ServicesSection() {
                   </li>
                 ))}
               </ul>
-          <Link href={CalendlyUrls.evaluation_url} target="_blank">
+              <Link href={CalendlyUrls.evaluation_url} target="_blank">
 
-              <Button
-                className={`w-full rounded-xl ${
-                  tier.popular
-                    ? "bg-[#b91c1c] hover:bg-[#dc2626] text-white"
-                    : "bg-white/10 hover:bg-white/20 text-[#e5e7eb] border border-white/20"
-                }`}
-              >
-                Get Started
-              </Button>
-            </Link>
+                <Button
+                  className={`w-full rounded-xl ${tier.popular
+                      ? "bg-[#b91c1c] hover:bg-[#dc2626] text-white"
+                      : "bg-white/10 hover:bg-white/20 text-[#e5e7eb] border border-white/20"
+                    }`}
+                >
+                  Get Started
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
