@@ -8,16 +8,23 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and tagline */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-[#e5e7eb] mb-4">Piranha Studios</h3>
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src="/logo.png" />
+              </div>
+              <span className="text-xl font-bold text-[#e5e7eb] hover:text-white transition-colors duration-300">
+                Piranha Studios
+              </span>
+            </Link>
             <p className="text-[#9ca3af] mb-6 max-w-md">Proudly solo-built in Stoke. Powered by open-source.</p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+              <Link href="https://github.com/piranhastudios/" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                 <Github className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+              <Link href="https://www.linkedin.com/company/piranha-studios-solutions" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                 <Linkedin className="h-6 w-6" />
               </Link>
-              <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+              <Link href="mailto:info@piranha-studios.co.uk" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                 <Mail className="h-6 w-6" />
               </Link>
             </div>

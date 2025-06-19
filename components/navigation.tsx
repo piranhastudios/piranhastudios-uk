@@ -15,8 +15,8 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-[#b91c1c] to-[#fca5a5] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img src="/logo.png" />
             </div>
             <span className="text-xl font-bold text-[#e5e7eb] hover:text-white transition-colors duration-300">
               Piranha Studios
