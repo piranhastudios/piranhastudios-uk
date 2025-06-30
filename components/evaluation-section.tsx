@@ -68,6 +68,17 @@ export function EvaluationSection() {
               Book Your Call Now
             </Button>
           </Link>
+          <div className="mt-6">
+            <Link href={CalendlyUrls.qa_url} target="_blank">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] px-8 py-3 text-lg rounded-2xl transition-all duration-300"
+              >
+                Not sure yet? Book free Q&amp;A
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

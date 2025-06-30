@@ -62,6 +62,16 @@ export function Navigation() {
               Book Evaluation
             </Button>
             </Link>
+            <Link href={CalendlyUrls.qa_url} target="_blank">
+            <Button
+            variant={"outline"}
+              size="sm"
+              className="border-[#fca5a5] text-[#fca5a5] px-4 py-2 hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-xl transition-all duration-300"
+            >
+              <Zap className="mr-2 h-4 w-4" />
+              Book free Q&amp;A
+            </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -115,14 +125,27 @@ export function Navigation() {
                 Contact
               </Link>
               <div className="px-3 py-2">
+                <Link href={CalendlyUrls.evaluation_url} target="_blank">
                 <Button
                   size="sm"
                   className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl"
                   onClick={() => setIsOpen(false)}
-                >
+                  >
                   <Zap className="mr-2 h-4 w-4" />
                   Book Evaluation
                 </Button>
+                </Link>
+                <Link href={CalendlyUrls.qa_url} target="_blank">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-2xl transition-all duration-300 mt-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Zap className="mr-2 h-4 w-4" />
+                  Book free Q&amp;A
+                </Button>
+                </Link>
               </div>
             </div>
           </div>
