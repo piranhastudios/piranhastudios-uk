@@ -30,7 +30,7 @@ export function EvaluationSection() {
           Book a Project Evaluation – £50
         </h2>
 
-        <div className="bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-white/10 shadow-2xl hover:shadow-[#fca5a5]/10 transition-all duration-500">
+        <div className="bg-white/5 backdrop-blur-md px-2 py-4 sm:px-12 sm:py-12 rounded-3xl border border-white/10 shadow-2xl hover:shadow-[#fca5a5]/10 transition-all duration-500">
           <p className="text-xl text-[#e5e7eb] mb-8">
             Every project starts with a paid 1-on-1 session. Why? Because we only work with startups we believe can
             succeed.
