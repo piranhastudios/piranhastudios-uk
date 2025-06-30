@@ -7,7 +7,7 @@ const clientProjects = [
     title: "GFA Exchange",
     client: "Fintech Data Platform",
     description:
-      "Real-time financial visibility and ESG insights platform for SMEs, enabling institutions to trade verified business data. Targeting potential Equifax partnership.",
+      "Real-time financial visibility and ESG insights platform for SMEs, enabling institutions to trade verified business data.",
     tech: ["Go", "Next.js", "Supabase", "Clerk Auth", "Stripe", "tRPC", "PostgreSQL"],
     timeline: "Ongoing development",
     outcome: "7% equity + 10% revenue share",

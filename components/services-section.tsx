@@ -8,26 +8,26 @@ const pricingTiers = [
     name: "Starter",
     price: "£200/month",
     description: "Light dev retainer for small tweaks/maintenance",
-    features: ["Bug fixes", "Minor updates", "Email support", "Monthly check-ins"],
+    features: ["Bug fixes", "Minor updates", "Email support", "Monthly check-ins", "suitable for small projects e.g. landing pages, blogs, or small web apps"],
   },
   {
     name: "Growth",
     price: "£1,000/month",
     description: "Regular weekly dev + advice",
-    features: ["Weekly development", "Strategic advice", "Priority support", "Feature development"],
+    features: ["Weekly development", "Strategic advice", "Priority support", "Feature development", "Suitable for growing startups e.g. SaaS, e-commerce, or content platforms"],
   },
   {
-    name: "Scale",
-    price: "£500-£5,000 flat fee",
+    name: "Build to Launch",
+    price: "£500-£10,000 flat fee",
     description: "Full MVP build — no rev share",
-    features: ["Complete MVP", "Full ownership", "Documentation", "30-day support", "payment plans available"],
+    features: ["Complete MVP", "Full ownership", "Documentation", "30-day support", "payment plans available", "suitable for startups ready to launch"],
     popular: true,
   },
   {
     name: "Custom",
-    price: "£350–£1,500 + 5–10% rev share",
+    price: "£1800+/month",
     description: "Mix of time and upside",
-    features: ["Flexible terms", "Revenue sharing", "Long-term partnership", "Ongoing support"],
+    features: ["Flexible terms", "Revenue sharing options", "Long-term partnership", "Ongoing support"],
   },
 ]
 
