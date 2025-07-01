@@ -197,7 +197,7 @@ export function ClientProjectsSection() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-white/10 shadow-2xl">
+          <div className="flex flex-col items-center bg-white/5 backdrop-blur-md rounded-3xl p-12 border border-white/10 shadow-2xl">
             <h3 className="text-3xl font-bold text-[#e5e7eb] mb-4">Ready to Join Our Success Stories?</h3>
             <p className="text-xl text-[#9ca3af] mb-8 max-w-2xl mx-auto">
               Let's discuss your project and see how we can help you build something amazing.

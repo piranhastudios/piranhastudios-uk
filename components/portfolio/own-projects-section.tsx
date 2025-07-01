@@ -57,7 +57,11 @@ export function OwnProjectsSection() {
                 </div>
               )}
 
-              <div className={`grid lg:grid-cols-2 gap-8 p-8 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
+                <div
+                className={`grid lg:grid-cols-2 gap-8 p-8 ${
+                  index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
+                } items-center justify-center text-center lg:text-left`}
+                >
                 {/* Project Image */}
                 <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                   <div className="bg-white/10 rounded-2xl p-4 hover:scale-105 transition-transform duration-500">
