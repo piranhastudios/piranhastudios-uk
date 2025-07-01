@@ -14,7 +14,7 @@ const clientProjects = [
     users: "Targeting SMEs, Banks, CRAs",
     image: "/images/gfa-exchange-screenshot.png",
     isConfidential: false,
-    liveUrl: "#",
+    liveUrl: "https://gfamonorepo.vercel.app",
     featured: true,
     milestone: "Equifax partnership targeted Oct 2024",
   },
@@ -111,11 +111,6 @@ export function ClientProjectsSection() {
                   <div className="absolute top-4 right-4 bg-[#b91c1c]/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center">
                     <Lock className="h-4 w-4 text-white mr-1" />
                     <span className="text-white text-sm font-semibold">NDA</span>
-                  </div>
-                )}
-                {project.isFamily && (
-                  <div className="absolute top-4 left-4 bg-[#fca5a5]/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center">
-                    <span className="text-white text-sm font-semibold">Family Venture</span>
                   </div>
                 )}
               </div>
