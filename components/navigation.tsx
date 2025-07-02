@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X, Zap, CircleHelp } from "lucide-react"
 import { CalendlyUrls } from "@/lib/data/calendly"
 
 export function Navigation() {
@@ -68,7 +68,7 @@ export function Navigation() {
               size="sm"
               className="border-[#fca5a5] text-[#fca5a5] px-4 py-2 hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-xl transition-all duration-300"
             >
-              <Zap className="mr-2 h-4 w-4" />
+              <CircleHelp className="mr-2 h-4 w-4" />
               Book free Q&amp;A
             </Button>
             </Link>
@@ -142,7 +142,7 @@ export function Navigation() {
                   className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-2xl transition-all duration-300 mt-2"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Zap className="mr-2 h-4 w-4" />
+                  <CircleHelp className="mr-2 h-4 w-4" />
                   Book free Q&amp;A
                 </Button>
                 </Link>

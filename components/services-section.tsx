@@ -7,29 +7,55 @@ const pricingTiers = [
   {
     name: "Starter",
     price: "£200/month",
-    description: "Light dev retainer for small tweaks/maintenance",
-    features: ["Bug fixes", "Minor updates", "Email support", "Monthly check-ins", "suitable for small projects e.g. landing pages, blogs, or small web apps"],
+    description: "Light support for small projects",
+    features: [
+      "Bug fixes (2–4 hrs/month)",
+      "Email support",
+      "Monthly check-ins",
+      "Basic monitoring",
+      "1–3 day response",
+    ],
   },
   {
     name: "Growth",
     price: "£1,000/month",
-    description: "Regular weekly dev + advice",
-    features: ["Weekly development", "Strategic advice", "Priority support", "Feature development", "Suitable for growing startups e.g. SaaS, e-commerce, or content platforms"],
+    description: "Weekly dev and product support",
+    features: [
+      "10 hrs dev/month",
+      "Weekly sprints",
+      "Priority fixes",
+      "Analytics & SEO",
+      "Weekly delivery",
+    ],
   },
   {
     name: "Build to Launch",
-    price: "£500-£10,000 flat fee",
-    description: "Full MVP build — no rev share",
-    features: ["Complete MVP", "Full ownership", "Documentation", "30-day support", "payment plans available", "suitable for startups ready to launch"],
+    price: "£8,000 flat fee",
+    description: "Full MVP in 6–8 weeks",
+    features: [
+      "Custom MVP build",
+      "Scoped plan",
+      "6–8 week delivery",
+      "Docs & handover",
+      "30-day support",
+    ],
     popular: true,
   },
   {
-    name: "Custom",
-    price: "£1800+/month",
-    description: "Mix of time and upside",
-    features: ["Flexible terms", "Revenue sharing options", "Long-term partnership", "Ongoing support"],
+    name: "Partner Program",
+    price: "From £1,800/month",
+    description: "Long-term dev & strategy",
+    features: [
+      "20 hrs/month",
+      "Rev share or equity",
+      "Tech roadmap",
+      "Investor support",
+      "24h response",
+      "Flexible partnership terms",
+    ],
   },
-]
+];
+
 
 export function ServicesSection() {
   return (
