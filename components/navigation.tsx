@@ -35,6 +35,12 @@ export function Navigation() {
               Portfolio
             </Link>
             <Link
+              href="/library"
+              className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
+            >
+              Library
+            </Link>
+            <Link
               href="/#services"
               className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
             >
