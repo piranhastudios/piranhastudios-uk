@@ -71,7 +71,7 @@ const techCategories = [
     title: "Specialized Tools",
     description: "Reusable utilities and internal tooling for client delivery",
     technologies: [
-      { name: "Medusa Plugin Library", detail: "Internal modules for faster builds" },
+      { name: "Piranha Plugin Library", detail: "Internal modules for faster builds" },
       { name: "Supabase Boilerplate", detail: "Pre-configured stack for MVPs" },
       { name: "Admin Dashboard Starter", detail: "Base UI for client ops portals" },
       { name: "Multi-step Form Wizard", detail: "Used in onboarding flows" },

@@ -10,13 +10,13 @@ const clientProjects = [
       "Real-time financial visibility and ESG insights platform for SMEs, enabling institutions to trade verified business data.",
     tech: ["Go", "Next.js", "Supabase", "Clerk Auth", "Stripe", "tRPC", "PostgreSQL"],
     timeline: "Ongoing development",
-    outcome: "7% equity + 10% revenue share",
+    outcome: "AI powered intelligence platform with real-time data insights",
     users: "Targeting SMEs, Banks, CRAs",
     image: "/images/gfa-exchange-screenshot.png",
     isConfidential: false,
     liveUrl: "https://gfamonorepo.vercel.app",
     featured: true,
-    milestone: "Equifax partnership targeted Oct 2024",
+    milestone: "Beta launch September 2025",
   },
   {
     title: "ChefUp",
@@ -25,10 +25,10 @@ const clientProjects = [
       "Marketplace platform connecting local chefs with customers for meal prep, catering, and food experiences. Empowering community chefs to build micro food businesses.",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Stripe Connect"],
     timeline: "8 weeks",
-    outcome: "Awaiting Prince's Trust grant funding",
+    outcome: "Prepping for viability testing phase",
     users: "Chef marketplace platform",
     image: "/images/chefup-screenshot.png",
-    isConfidential: false,
+    isConfidential: true,
     liveUrl: "https://chefup-platfform.vercel.app",
   },
   {
@@ -52,10 +52,10 @@ const clientProjects = [
       "E-commerce platform for authentic frozen Caribbean meal boxes. Ready-to-launch food product business bringing traditional flavors to mainstream retail.",
     tech: ["Next.js", "Shopify", "Stripe", "Inventory Management"],
     timeline: "6 weeks",
-    outcome: "Ready for retail launch",
+    outcome: "In viability testing phase with retailers",
     users: "E-commerce platform complete",
     image: "/images/carmen-caribbean-screenshot.png",
-    isConfidential: false,
+    isConfidential: true,
     liveUrl: "https://carmens-carribiean-cuisuine.vercel.app/gb",
   },
   {
@@ -65,7 +65,7 @@ const clientProjects = [
       "Professional website for non-invasive aesthetic dermatology clinic, featuring appointment booking and treatment information.",
     tech: ["Next.js", "Booking System", "CMS", "Responsive Design"],
     timeline: "6 weeks",
-    outcome: "Increased online bookings by 40%",
+    outcome: "Increased bookings by 40%",
     users: "200+ monthly visitors",
     image: "/images/skeendeep-screenshot.png",
     isConfidential: false,
@@ -184,11 +184,6 @@ export function ClientProjectsSection() {
                       View Project
                     </Button>
                   </Link>
-                )}
-                {project.isConfidential && (
-                  <div className="text-center py-2">
-                    <p className="text-[#9ca3af] text-sm">Details under NDA</p>
-                  </div>
                 )}
               </div>
             </div>

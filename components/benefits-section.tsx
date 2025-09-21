@@ -3,7 +3,7 @@ import { Rocket, DollarSign, Wrench, Handshake, PoundSterling } from "lucide-rea
 const benefits = [
   {
     icon: Rocket,
-    title: "MVPs in 6–12 weeks",
+    title: "MVPs in as little as 4 weeks",
     description: "Fast turnaround from idea to working product",
   },
   {

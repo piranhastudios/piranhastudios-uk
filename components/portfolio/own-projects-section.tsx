@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const ownProjects = [
   {
-    title: "Medusa Plugin Library",
+    title: "Piranha Studios Library",
     description:
-      "A curated set of MedusaJS plugins and boilerplates built for common use cases in e-commerce and healthcare. Focused on speeding up delivery for Piranha client projects while laying the foundation for a future open-source toolkit and potential monetization via premium add-ons.",
-    tech: ["MedusaJS", "TypeScript", "Node.js", "Stripe", "Sanity CMS"],
+      "A curated set of plugins and boilerplates built for common use cases in e-commerce, healthcare and beyond. Focused on speeding up delivery for Piranha client projects while laying the foundation for a future open-source toolkit.",
+    tech: ["Golang", "TypeScript", "Node.js"],
     status: "In Progress",
     revenue: "Not monetized (internal use)",
     users: "Used in client MVP builds",

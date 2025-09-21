@@ -14,7 +14,7 @@ const steps = [
   {
     icon: Code,
     title: "Build",
-    description: "Lean, open-source MVP build in 4–8 weeks",
+    description: "Lean, open-source MVP build in as little as 4 weeks",
   },
   {
     icon: TestTube,
