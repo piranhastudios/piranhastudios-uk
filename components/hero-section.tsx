@@ -34,7 +34,7 @@ export function HeroSection() {
 
         {/* Subheadline */}
         <p className="text-xl md:text-2xl mb-12 text-[#9ca3af] max-w-3xl mx-auto leading-relaxed">
-          A consultancy venture studio that co-creates, builds, and scales innovative companies from the ground up while partnering with visionary founders, providing consultation and services year-round to SME's.
+          A consultancy venture studio that co-creates, builds, and scales innovative companies from the ground up while partnering with visionary founders and SME's, providing consultation and services year-round.
         </p>
 
         {/* CTA Buttons */}
