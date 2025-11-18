@@ -1,37 +1,37 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-
 const faqs = [
   {
     question: "What kind of projects do you take on?",
     answer:
-      "I focus on early-stage startups building web applications, SaaS tools, and digital products. I work with founders who need technical expertise but want to maintain equity and control.",
+      "Piranha Studios works with founders and SMEs that need stable, scalable digital infrastructure. We build SaaS platforms, marketplaces, data-driven dashboards, operational backends, healthcare systems, fintech tooling, and modern e-commerce setups. If you need a long-term technical partner rather than one-off freelancers, we’re a strong fit.",
   },
   {
-    question: "What do I get in the £50 evaluation?",
+    question: "What does the initial discovery include?",
     answer:
-      "A comprehensive 30-45 minute call where we discuss your idea, I provide honest feedback on viability, create a custom project brief, and potentially provide early UI mockups or improvement suggestions.",
+      "For small projects, we run a focused 4-hour discovery session to map out your goals, core features, user journeys, and technical approach. For larger or complex products, we run a full two-week discovery sprint covering architecture, data models, integrations, workflows, UX flows, and delivery planning. You always walk away with a clear, build-ready blueprint.",
   },
   {
-    question: "Can I upgrade from subscription to full build later?",
+    question: "Can I upgrade from a subscription to a full build later?",
     answer:
-      "Many clients start with the Growth plan to test the waters, then upgrade to Scale or Custom when they're ready for a full MVP build.",
+      "Yes. Many clients start on a subscription to validate ideas, launch early features, or get initial traction. When the business is ready, we transition into a full build. Everything created during the subscription phase rolls into the final system with no wasted work.",
   },
   {
     question: "Do you help after the MVP is live?",
     answer:
-      "Yes, I offer ongoing support through the Starter and Growth plans. Even Scale clients get 30 days of included support, with options to continue with monthly retainers.",
+      "Yes. Ongoing support is part of how we work. Subscription clients stay with us month-to-month, and full-build clients get structured post-launch support with the option to continue on a long-term plan. We stay involved to keep the system stable, secure, and evolving.",
   },
   {
     question: "Who owns the code and IP?",
     answer:
-      "You own everything. All code, designs, and intellectual property belong to you. I use open-source technologies to ensure no vendor lock-in.",
+      "You own everything. All code, architecture, designs, and intellectual property belong to you. We build using open, modern technologies so you’re never locked into proprietary platforms or dependent on a single developer.",
   },
   {
-    question: "Do you support e-commerce/health/fintech?",
+    question: "Do you support e-commerce, health, and fintech projects?",
     answer:
-      "I work across various industries, but I'm particularly experienced with SaaS, marketplaces, and productivity tools. For highly regulated industries like fintech or health, we'll discuss compliance requirements during the evaluation.",
+      "Yes. We work across multiple industries, but we specialise in marketplaces, SaaS products, and operational platforms. For regulated sectors like healthcare and finance, we align architecture with the required compliance standards during discovery.",
   },
-]
+];
+
 
 export function FAQSection() {
   return (
