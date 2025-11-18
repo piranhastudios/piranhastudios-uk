@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Zap, CircleHelp } from "lucide-react"
+import { Menu, X, CircleHelp, Phone } from "lucide-react"
 import { CalendlyUrls } from "@/lib/data/calendly"
 import { StatusIndicator, isAcceptingProjects } from "@/components/status-indicator"
 
@@ -27,14 +27,11 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium">
-              Home
-            </Link>
             <Link
               href="/portfolio"
               className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
             >
-              Portfolio
+              Work
             </Link>
             <Link
               href="/#services"
@@ -43,37 +40,31 @@ export function Navigation() {
               Services
             </Link>
             <Link
-              href="/#process"
-              className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
-            >
-              Process
-            </Link>
-            <Link
               href="/#contact"
               className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
             >
               Contact
             </Link>
-          {isAcceptingProjects && (
-            <Link href={CalendlyUrls.evaluation_url} target="_blank">
-              <Button
-                size="sm"
-                className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-4 py-2 rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300 hover:scale-105"
-              >
-                <Zap className="mr-2 h-4 w-4" />
-                Book Evaluation
-              </Button>
-            </Link>
-          )}
+            {isAcceptingProjects && (
+              <Link href={CalendlyUrls.evaluation_url} target="_blank">
+                <Button
+                  size="sm"
+                  className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-4 py-2 rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300 hover:scale-105"
+                >
+                  <Phone className="mr-2 h-4 w-4" />
+                  Discovery Call
+                </Button>
+              </Link>
+            )}
             <Link href={CalendlyUrls.qa_url} target="_blank">
-            <Button
-            variant={"outline"}
-              size="sm"
-              className="border-[#fca5a5] text-[#fca5a5] px-4 py-2 hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-xl transition-all duration-300"
-            >
-              <CircleHelp className="mr-2 h-4 w-4" />
-              Book free Q&amp;A
-            </Button>
+              <Button
+                variant={"outline"}
+                size="sm"
+                className="border-[#fca5a5] text-[#fca5a5] px-4 py-2 hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-xl transition-all duration-300"
+              >
+                <CircleHelp className="mr-2 h-4 w-4" />
+                Book free Q&amp;A
+              </Button>
             </Link>
           </div>
 
@@ -138,21 +129,21 @@ export function Navigation() {
                       className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl"
                       onClick={() => setIsOpen(false)}
                     >
-                      <Zap className="mr-2 h-4 w-4" />
-                      Book Consultation
+                      <Phone className="mr-2 h-4 w-4" />
+                      Discovery Call
                     </Button>
                   </Link>
                 )}
                 <Link href={CalendlyUrls.qa_url} target="_blank">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-2xl transition-all duration-300 mt-2"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <CircleHelp className="mr-2 h-4 w-4" />
-                  Book free Q&amp;A
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-2xl transition-all duration-300 mt-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <CircleHelp className="mr-2 h-4 w-4" />
+                    Book free Q&amp;A
+                  </Button>
                 </Link>
               </div>
             </div>

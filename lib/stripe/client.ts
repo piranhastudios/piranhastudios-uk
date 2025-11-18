@@ -1,19 +1,32 @@
-import Stripe from 'stripe';
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
-
-const createCheckoutSession = async (priceId: string) => {
-  const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
-    mode: 'subscription',
-    line_items: [
-      {
-        price: priceId,
-        quantity: 1,
+export const createCheckoutSession = async (packageData: {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+}) => {
+  try {
+    const response = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    ],
-    success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/`,
-  });
-  return session;
-}
+      body: JSON.stringify({ packageData }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to create checkout session');
+    }
+
+    // Redirect to Stripe Checkout
+    if (data.url) {
+      window.location.href = data.url;
+    }
+
+    return data;
+  } catch (error) {
+    console.error('Error creating checkout session:', error);
+    throw error;
+  }
+};

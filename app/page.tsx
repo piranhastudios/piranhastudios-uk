@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#091113] text-[#e5e7eb]">
       <HeroSection />
-      <IntroSection />
+      {/* <IntroSection /> */}
       <BenefitsSection />
       <div id="services">
         <ServicesSection />
