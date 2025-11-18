@@ -7,6 +7,13 @@ import { Menu, X, CircleHelp, Phone } from "lucide-react"
 import { CalendlyUrls } from "@/lib/data/calendly"
 import { StatusIndicator, isAcceptingProjects } from "@/components/status-indicator"
 
+const navigationItems = [
+  { href: "/portfolio", label: "Work" },
+  { href: "/resources", label: "Resources" },
+  { href: "/#services", label: "Services" },
+  { href: "/#contact", label: "Contact" },
+]
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -27,24 +34,15 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/portfolio"
-              className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
-            >
-              Work
-            </Link>
-            <Link
-              href="/#services"
-              className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
-            >
-              Services
-            </Link>
-            <Link
-              href="/#contact"
-              className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
-            >
-              Contact
-            </Link>
+            {navigationItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300 font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
             {isAcceptingProjects && (
               <Link href={CalendlyUrls.evaluation_url} target="_blank">
                 <Button
@@ -83,45 +81,17 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-[#0f1419]/95 backdrop-blur-md rounded-2xl mt-2 border border-white/10">
-              <div className="px-3 py-2">
-                <StatusIndicator size="sm" />
-              </div>
-              <Link
-                href="/"
-                className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/portfolio"
-                className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="#services"
-                className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="#process"
-                className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Process
-              </Link>
-              <Link
-                href="#contact"
-                className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
-              <div className="px-3 py-2">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block px-3 py-2 text-[#9ca3af] hover:text-[#fca5a5] hover:bg-white/5 rounded-xl transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <div className="px-3 py-2 space-y-2">
                 {isAcceptingProjects && (
                   <Link href={CalendlyUrls.evaluation_url} target="_blank">
                     <Button
@@ -138,7 +108,7 @@ export function Navigation() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-2xl transition-all duration-300 mt-2"
+                    className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] rounded-xl transition-all duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     <CircleHelp className="mr-2 h-4 w-4" />
