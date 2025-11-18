@@ -4,6 +4,8 @@ import { getAllArticles, getFeaturedTags } from "@/lib/articles"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ResourcesClient } from "@/components/resources/resources-client"
+import { ResourcesSkeleton } from "@/components/resources/resources-skeleton"
+import { Suspense } from "react"
 
 export default function ResourcesPage() {
   const articles = getAllArticles()
@@ -24,8 +26,9 @@ export default function ResourcesPage() {
               Practical advice on building better products, faster
             </p>
           </div>
-
-          <ResourcesClient articles={articles} featuredTags={featuredTags} />
+          <Suspense fallback={<ResourcesSkeleton />}>
+            <ResourcesClient articles={articles} featuredTags={featuredTags} />
+          </Suspense>
         </div>
       </main>
 
