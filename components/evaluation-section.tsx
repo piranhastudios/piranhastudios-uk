@@ -1,7 +1,9 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { CalendlyUrls } from "@/lib/data/calendly"
 import { CheckCircle2, Zap } from "lucide-react"
 import Link from "next/link"
+import { useAnalytics } from "./AnalyticsTracker"
 
 const smallProjectFeatures = [
   "Understand your business goals",
@@ -38,6 +40,7 @@ const largeProjectTypes = [
 ]
 
 export function EvaluationSection() {
+  const trackEvent = useAnalytics();
   return (
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
@@ -110,7 +113,7 @@ export function EvaluationSection() {
                   </p>
                 </div>
 
-                <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block">
+                <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '4-hour session' })}>
                   <Button
                     size="lg"
                     className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white py-6 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -166,7 +169,7 @@ export function EvaluationSection() {
                 </p>
               </div>
 
-              <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block">
+              <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '2-week session' })}>
                 <Button
                   size="lg"
                   className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white py-6 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
