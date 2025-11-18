@@ -9,14 +9,13 @@ const clientProjects = [
     description:
       "Real-time financial visibility and ESG insights platform for SMEs, enabling institutions to trade verified business data.",
     tech: ["Go", "Next.js", "Supabase", "Clerk Auth", "Stripe", "tRPC", "PostgreSQL"],
-    timeline: "Ongoing development",
-    outcome: "AI powered intelligence platform with real-time data insights",
-    users: "Targeting SMEs, Banks, CRAs",
+    timeline: "Ongoing",
+    outcome: "Nominated for business cloud Fintech UK top 50",
+    status: "Live Beta",
     image: "/images/gfa-exchange-screenshot.png",
     isConfidential: false,
-    liveUrl: "https://gfamonorepo.vercel.app",
+    liveUrl: "https://app.gfaexchange.com",
     featured: true,
-    milestone: "Beta launch September 2025",
   },
   {
     title: "ChefUp",
@@ -24,9 +23,9 @@ const clientProjects = [
     description:
       "Marketplace platform connecting local chefs with customers for meal prep, catering, and food experiences. Empowering community chefs to build micro food businesses.",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Stripe Connect"],
-    timeline: "8 weeks",
-    outcome: "Prepping for viability testing phase",
-    users: "Chef marketplace platform",
+    timeline: "Ongoing",
+    outcome: "Clear product roadmap for MVP development",
+    status: "Project Planning",
     image: "/images/chefup-screenshot.png",
     isConfidential: true,
     liveUrl: "https://chefup-platfform.vercel.app",
@@ -39,7 +38,7 @@ const clientProjects = [
     tech: ["Next.js", "PostgreSQL", "Healthcare APIs", "EHR Integration"],
     timeline: "Ongoing",
     outcome: "Fully operational, serving patients",
-    users: "Active patient base",
+    status: "In development",
     image: "/images/premier-health-screenshot.png",
     isConfidential: false,
     liveUrl: "https://premierhealthcentrescameroon.com/gb",
@@ -52,8 +51,8 @@ const clientProjects = [
       "E-commerce platform for authentic frozen Caribbean meal boxes. Ready-to-launch food product business bringing traditional flavors to mainstream retail.",
     tech: ["Next.js", "Shopify", "Stripe", "Inventory Management"],
     timeline: "6 weeks",
-    outcome: "In viability testing phase with retailers",
-    users: "E-commerce platform complete",
+    outcome: "Working E-commerce platform ready for launch",
+    status: "Complete",
     image: "/images/carmen-caribbean-screenshot.png",
     isConfidential: true,
     liveUrl: "https://carmens-carribiean-cuisuine.vercel.app/gb",
@@ -66,7 +65,7 @@ const clientProjects = [
     tech: ["Next.js", "Booking System", "CMS", "Responsive Design"],
     timeline: "6 weeks",
     outcome: "Increased bookings by 40%",
-    users: "200+ monthly visitors",
+    status: "200+ monthly visitors",
     image: "/images/skeendeep-screenshot.png",
     isConfidential: false,
     liveUrl: "https://www.skeendeep.co.uk",
@@ -107,12 +106,6 @@ export function ClientProjectsSection() {
                   alt={project.title}
                   className="w-full h-48 object-cover"
                 />
-                {project.isConfidential && (
-                  <div className="absolute top-4 right-4 bg-[#b91c1c]/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center">
-                    <Lock className="h-4 w-4 text-white mr-1" />
-                    <span className="text-white text-sm font-semibold">NDA</span>
-                  </div>
-                )}
               </div>
 
               <div className="p-6">
@@ -137,7 +130,7 @@ export function ClientProjectsSection() {
                   </div>
                   <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                     <p className="text-[#fca5a5] text-sm font-semibold mb-1">Status</p>
-                    <p className="text-[#e5e7eb] font-bold text-sm">{project.users}</p>
+                    <p className="text-[#e5e7eb] font-bold text-sm">{project.status}</p>
                   </div>
                 </div>
 
@@ -149,13 +142,6 @@ export function ClientProjectsSection() {
                   </div>
                   <p className="text-[#e5e7eb] text-sm font-medium">{project.outcome}</p>
                 </div>
-
-                {project.milestone && (
-                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 mb-4">
-                    <p className="text-blue-400 text-sm font-semibold mb-1">Milestone</p>
-                    <p className="text-[#e5e7eb] text-sm font-medium">{project.milestone}</p>
-                  </div>
-                )}
 
                 {/* Tech Stack */}
                 <div className="mb-6">

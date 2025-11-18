@@ -11,7 +11,6 @@ export default function PortfolioPage() {
       <PortfolioHero />
       <ProjectStatsSection />
       <ClientProjectsSection />
-      <OwnProjectsSection />
       <TechStackSection />
       <Footer />
     </div>
