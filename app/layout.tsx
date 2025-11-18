@@ -5,6 +5,8 @@ import { Suspense } from "react"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { CookieConsent } from "@/components/cookie-consent"
+import { AnalyticsTracker } from "@/components/AnalyticsTracker"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,10 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation />
-        <Suspense fallback={<LoadingSpinner />}>
-          <main className="pt-16">{children}</main>
-        </Suspense>
+        <AnalyticsTracker>
+          <Navigation />
+          <Suspense fallback={<LoadingSpinner />}>
+            <main className="pt-16">{children}</main>
+          </Suspense>
+          <CookieConsent />
+        </AnalyticsTracker>
       </body>
     </html>
   )
