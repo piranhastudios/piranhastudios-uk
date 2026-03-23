@@ -44,7 +44,7 @@ export function HeroSection() {
             </div>
 
             {/* Main headline */}
-            <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent" style={{lineHeight: 1.2}}>
               Increase your revenue with better systems
             </h1>
 
