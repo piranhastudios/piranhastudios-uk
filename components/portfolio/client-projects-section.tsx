@@ -1,76 +1,9 @@
 import { Button } from "@/components/ui/button"
+import { clientProjects } from "@/lib/data/client-projects"
 import { ExternalLink, Lock, TrendingUp } from "lucide-react"
 import Link from "next/link"
 
-const clientProjects = [
-  {
-    title: "GFA Exchange",
-    client: "Fintech Data Platform",
-    description:
-      "Real-time financial visibility and ESG insights platform for SMEs, enabling institutions to trade verified business data.",
-    tech: ["Go", "Next.js", "Supabase", "Clerk Auth", "Stripe", "tRPC", "PostgreSQL"],
-    timeline: "Ongoing",
-    outcome: "Nominated for business cloud Fintech UK top 50",
-    status: "Live Beta",
-    image: "/images/gfa-exchange-screenshot.png",
-    isConfidential: false,
-    liveUrl: "https://app.gfaexchange.com",
-    featured: true,
-  },
-  {
-    title: "ChefUp",
-    client: "Food Tech Marketplace",
-    description:
-      "Marketplace platform connecting local chefs with customers for meal prep, catering, and food experiences. Empowering community chefs to build micro food businesses.",
-    tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Stripe Connect"],
-    timeline: "Ongoing",
-    outcome: "Clear product roadmap for MVP development",
-    status: "Project Planning",
-    image: "/images/chefup-screenshot.png",
-    isConfidential: true,
-    liveUrl: "https://chefup-platfform.vercel.app",
-  },
-  {
-    title: "Premier Health Centres",
-    client: "Healthcare Delivery Venture",
-    description:
-      "Western-standard clinical care delivery in Sub-Saharan Africa. Fully operational healthcare centers with ongoing EHR system development.",
-    tech: ["Next.js", "PostgreSQL", "Healthcare APIs", "EHR Integration"],
-    timeline: "Ongoing",
-    outcome: "Fully operational, serving patients",
-    status: "In development",
-    image: "/images/premier-health-screenshot.png",
-    isConfidential: false,
-    liveUrl: "https://premierhealthcentrescameroon.com/gb",
-    isFamily: true,
-  },
-  {
-    title: "Carmen's Caribbean",
-    client: "Food Product Business",
-    description:
-      "E-commerce platform for authentic frozen Caribbean meal boxes. Ready-to-launch food product business bringing traditional flavors to mainstream retail.",
-    tech: ["Next.js", "Shopify", "Stripe", "Inventory Management"],
-    timeline: "6 weeks",
-    outcome: "Working E-commerce platform ready for launch",
-    status: "Complete",
-    image: "/images/carmen-caribbean-screenshot.png",
-    isConfidential: true,
-    liveUrl: "https://carmens-carribiean-cuisuine.vercel.app/gb",
-  },
-  {
-    title: "Skeendeep Aesthetics",
-    client: "Aesthetic Dermatology Clinic",
-    description:
-      "Professional website for non-invasive aesthetic dermatology clinic, featuring appointment booking and treatment information.",
-    tech: ["Next.js", "Booking System", "CMS", "Responsive Design"],
-    timeline: "6 weeks",
-    outcome: "Increased bookings by 40%",
-    status: "200+ monthly visitors",
-    image: "/images/skeendeep-screenshot.png",
-    isConfidential: false,
-    liveUrl: "https://www.skeendeep.co.uk",
-  },
-]
+
 
 export function ClientProjectsSection() {
   return (

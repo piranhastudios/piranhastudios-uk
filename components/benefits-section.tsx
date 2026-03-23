@@ -3,23 +3,23 @@ import { Rocket, DollarSign, Wrench, Handshake, PoundSterling } from "lucide-rea
 const benefits = [
   {
     icon: Rocket,
-    title: "MVPs in as little as 4 weeks",
-    description: "Fast turnaround from idea to working product",
+    title: "Built to generate revenue",
+    description: "We don’t just launch stores, we build systems designed to convert and sell from day one",
   },
   {
     icon: PoundSterling,
-    title: "Founder-friendly pricing",
-    description: "Flexible payment options that work for startups",
+    title: "Focused on ROI, not just design",
+    description: "Every decision is made to increase revenue, not just make things look good",
   },
   {
     icon: Wrench,
-    title: "Built with open-source tech",
-    description: "No vendor lock-in, full code ownership",
+    title: "Everything works together",
+    description: "Your store, payments, and internal tools are fully connected so your business runs smoothly",
   },
   {
     icon: Handshake,
-    title: "Revenue share or pay once",
-    description: "Choose the model that fits your situation",
+    title: "A technical partner, not just a builder",
+    description: "We stay involved to improve, optimise, and grow your systems over time",
   },
 ]
 

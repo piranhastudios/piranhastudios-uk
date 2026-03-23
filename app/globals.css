@@ -81,3 +81,21 @@ html {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
 }
+
+/* Infinite scroll animation */
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-444px * 5)); /* 420px width + 24px gap */
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 30s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}

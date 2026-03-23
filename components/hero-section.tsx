@@ -45,12 +45,12 @@ export function HeroSection() {
 
             {/* Main headline */}
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
-              We Build Products That Work
+              Increase your revenue with better systems
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl mb-12 text-[#9ca3af] leading-relaxed">
-              You have an idea. We turn it into a working product. Then we help you grow it. Design, development, strategy — everything you need under one roof.
+              From e-commerce stores to custom apps, we build and connect the systems that help your business sell more and run smoothly.
             </p>
 
             {/* CTA Buttons */}
@@ -62,7 +62,7 @@ export function HeroSection() {
                     className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-[#b91c1c]/20"
                   >
                     <Zap className="mr-2 h-5 w-5" />
-                    Start Your Project
+                    Schedule A Planning Call
                   </Button>
                 </Link>
               ) : (
@@ -72,7 +72,7 @@ export function HeroSection() {
                     className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-[#b91c1c]/20"
                   >
                     <Zap className="mr-2 h-5 w-5" />
-                    Get on the Waitlist
+                    Get Notified When We’re Accepting Projects
                   </Button>
                 </Link>
               )}
@@ -80,10 +80,10 @@ export function HeroSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[#fca5a5]/30 text-[#fca5a5] hover:bg-[#fca5a5]/10 px-8 py-4 text-lg rounded-2xl backdrop-blur-sm hover:border-[#fca5a5]/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#fca5a5]/20"
+                  className="border-[#fca5a5]/30 text-[#fca5a5] hover:bg-[#fca5a5]/10 px-8 py-4 text-lg rounded-2xl backdrop-blur-sm hover:border-[#fca5a5]/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#fca5a5]/20 hover:text-[#fca5a5]/90"
                 >
                   <ArrowDown className="mr-2 h-5 w-5" />
-                  See What We Do
+                  See How It Works
                 </Button>
               </Link>
             </div>
