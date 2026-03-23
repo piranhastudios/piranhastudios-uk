@@ -21,16 +21,12 @@ export function IntroSection() {
       </div>
       
       <div className="relative">
-        {/* Gradient overlays for fade effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        
         {/* Scrolling container */}
         <div className="flex gap-6 animate-infinite-scroll">
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[420px] bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden hover:border-[#fca5a5]/30 transition-all duration-300 group"
+              className="flex-shrink-0 w-[280px] md:w-[420px] bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden hover:border-[#fca5a5]/30 transition-all duration-300 group"
             >
               <div className="relative h-48 bg-gradient-to-br from-[#1a1a1a] to-[#0f1419] overflow-hidden">
                 {item.image && (
