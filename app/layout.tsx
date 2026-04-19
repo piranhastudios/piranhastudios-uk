@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "A solo studio helping founders launch bold products without giving up equity. From idea to MVP in 4-8 weeks.",
   generator: "v0.dev",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
