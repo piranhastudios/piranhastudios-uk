@@ -45,7 +45,7 @@ export const clientProjects = [
     client: "Food Product Business",
     description:
       "E-commerce platform for authentic frozen Caribbean meal boxes. Ready-to-launch food product business bringing traditional flavors to mainstream retail.",
-    tech: ["Next.js", "Shopify", "Stripe", "Inventory Management"],
+    tech: ["Next.js", "Medusa.js", "Stripe", "Inventory Management"],
     timeline: "6 weeks",
     outcome: "Working E-commerce platform ready for launch",
     status: "Complete",
