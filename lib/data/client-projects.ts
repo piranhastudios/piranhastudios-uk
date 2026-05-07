@@ -66,4 +66,43 @@ export const clientProjects = [
     isConfidential: false,
     liveUrl: "https://www.skeendeep.co.uk",
   },
+  {
+    title: "Bonsai Essentials",
+    client: "E-commerce Startup",
+    description:
+      "E-commerce platform for premium bonsai care products, featuring product catalog, secure checkout, gamified offers, and customer reviews.",
+    tech: ["Next.js", "Stripe", "CMS", "Responsive Design", "Framer Motion", "Medusa.js"],
+    timeline: "4 weeks",
+    outcome: "Successful launched with full shipping capabilities and a custom gamified offers system",
+    status: "Live",
+    image: "/images/bonsai-essentials.png",
+    isConfidential: false,
+    liveUrl: "https://bonsai-essentials.storefactory.shop/gb",
+  },
+  {
+    title: "Sindicate HQ",
+    client: "Music Production and Events Collective",
+    description:
+      "Brand identity and website for music production and events collective, showcasing services, portfolio, and contact information.",
+    tech: ["Next.js", "CMS", "Responsive Design", "Framer Motion"],
+    timeline: "4 weeks",
+    outcome: "First website for the collective, showcasing their work and attracting new clients. The website also enables them to provide tickets for their events and sell their merch online.",
+    status: "Live",
+    image: "/images/sindicatehq-screenshot.png",
+    isConfidential: false,
+    liveUrl: "https://sindicatehq.storefactory.shop/gb",
+  },
+  {
+    title: "Batch Chocolate",
+    client: "Food Product Business",
+    description:
+      "E-commerce platform for artisanal chocolate brand, featuring product catalog, secure checkout, and brand storytelling.",
+    tech: ["Next.js", "Stripe", "Medusa.js", "Responsive Design"],
+    timeline: "4 weeks",
+    outcome: "Successful launch with a fully functional e-commerce platform and a strong brand presence online.",
+    status: "Live",
+    image: "/images/batch-chocolate-screenshot.png",
+    isConfidential: false,
+    liveUrl: "https://batchchocolate.co.uk/gb",
+  }
 ]
