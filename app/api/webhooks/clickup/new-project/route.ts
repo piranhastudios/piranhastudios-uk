@@ -9,7 +9,7 @@ const PORTAL_URL = `${BASE_URL}/client-portal`
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    debugger;
+    console.log(body);
     const { event, task_id } = body
 
     if (event !== 'taskCreated') {

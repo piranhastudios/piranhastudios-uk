@@ -1,7 +1,10 @@
 'use client'
 
+// Auth-gated, per-user content — never statically prerender
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect, useCallback, useRef } from 'react'
-import { createClient, type Session } from '@supabase/supabase-js'
+import { createClient, type Session, type SupabaseClient } from '@supabase/supabase-js'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -9,11 +12,18 @@ import { Label } from '@/components/ui/label'
 import { Progress } from '@/components/ui/progress'
 import { ChevronLeft, ChevronRight, Loader2, Mail, CheckCircle2 } from 'lucide-react'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_DELIVERY_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_DELIVERY_SUPABASE_ANON_KEY!,
-  { auth: { detectSessionInUrl: true, persistSession: true } }
-)
+// Lazy singleton — only created at runtime in the browser, never during build/SSR
+let _supabase: SupabaseClient | null = null
+function getSupabase(): SupabaseClient {
+  if (!_supabase) {
+    _supabase = createClient(
+      process.env.NEXT_PUBLIC_DELIVERY_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_DELIVERY_SUPABASE_ANON_KEY!,
+      { auth: { detectSessionInUrl: true, persistSession: true } }
+    )
+  }
+  return _supabase
+}
 
 type FormData = {
   business_name: string; project_name: string; primary_contact: string
@@ -61,7 +71,8 @@ export default function ClientPortal() {
   const initialized = useRef(false)
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_, session) => {
+    const sb = getSupabase()
+    const { data: { subscription } } = sb.auth.onAuthStateChange(async (_, session) => {
       setSession(session)
       setLoading(false)
 
@@ -69,7 +80,7 @@ export default function ClientPortal() {
         initialized.current = true
         const email = session.user.email!
 
-        const { data } = await supabase
+        const { data } = await sb
           .from('client_onboarding')
           .select('*')
           .eq('email', email)
@@ -82,7 +93,7 @@ export default function ClientPortal() {
           if (completed_at) setCompleted(true)
 
           if (!data.user_id) {
-            await supabase
+            await sb
               .from('client_onboarding')
               .update({ user_id: session.user.id })
               .eq('email', email)
@@ -100,7 +111,7 @@ export default function ClientPortal() {
   const saveAndAdvance = async (nextStep: number) => {
     if (!session) return
     setSaving(true)
-    await supabase
+    await getSupabase()
       .from('client_onboarding')
       .update({ ...form, current_step: nextStep, updated_at: new Date().toISOString() })
       .eq('email', session.user.email)
@@ -112,7 +123,7 @@ export default function ClientPortal() {
   const markComplete = async () => {
     if (!session) return
     setSaving(true)
-    await supabase
+    await getSupabase()
       .from('client_onboarding')
       .update({ ...form, current_step: STEPS.length, completed_at: new Date().toISOString(), updated_at: new Date().toISOString() })
       .eq('email', session.user.email)
