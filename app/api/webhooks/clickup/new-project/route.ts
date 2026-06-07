@@ -10,10 +10,10 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     console.log(body);
-    const { event, task_id } = body
+    const task_id: string = body.payload?.id ?? body.task_id
 
-    if (event !== 'taskCreated') {
-      return NextResponse.json({ ok: true, skipped: 'not taskCreated' })
+    if (!task_id) {
+      return NextResponse.json({ error: 'No task_id in payload' }, { status: 400 })
     }
 
     const task = await getTask(task_id)
