@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-delivery'
+import { getSupabaseAdmin } from '@/lib/supabase-delivery'
 import { addTaskComment, moveTaskToList } from '@/lib/clickup'
 
 const INCOMING_LIST = process.env.CLICKUP_INCOMING_LIST_ID!
@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     const { email } = await req.json()
     if (!email) return NextResponse.json({ error: 'email required' }, { status: 400 })
 
-    const { data } = await supabaseAdmin
+    const { data } = await getSupabaseAdmin()
       .from('client_onboarding')
       .select('clickup_task_id')
       .eq('email', email)

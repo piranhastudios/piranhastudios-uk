@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabaseAdmin } from '@/lib/supabase-delivery'
+import { getSupabaseAdmin } from '@/lib/supabase-delivery'
 import { getTask, addTaskComment, extractEmail } from '@/lib/clickup'
 
 const INCOMING_LIST = process.env.CLICKUP_INCOMING_LIST_ID
@@ -28,8 +28,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'No email found in task' }, { status: 422 })
     }
 
+    const supabase = getSupabaseAdmin()
+
     // Invite user (creates account + sends magic link email)
-    const { error: inviteError } = await supabaseAdmin.auth.admin.inviteUserByEmail(email, {
+    const { error: inviteError } = await supabase.auth.admin.inviteUserByEmail(email, {
       redirectTo: PORTAL_URL,
       data: { clickup_task_id: task_id },
     })
@@ -39,7 +41,7 @@ export async function POST(req: NextRequest) {
     if (inviteError) {
       if (inviteError.message.toLowerCase().includes('already been registered')) {
         // User exists — generate a fresh magic link for the team to forward
-        const { data: linkData } = await supabaseAdmin.auth.admin.generateLink({
+        const { data: linkData } = await supabase.auth.admin.generateLink({
           type: 'magiclink',
           email,
           options: { redirectTo: PORTAL_URL },
@@ -55,7 +57,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Upsert record in delivery DB
-    await supabaseAdmin
+    await supabase
       .from('client_onboarding')
       .upsert({ email, clickup_task_id: task_id }, { onConflict: 'email', ignoreDuplicates: true })
 
