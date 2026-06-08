@@ -60,6 +60,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "remark-gfm": "^4.0.1",
+    "resend": "^6.12.4",
     "sonner": "^1.7.1",
     "stripe": "^18.5.0",
     "tailwind-merge": "^2.5.5",

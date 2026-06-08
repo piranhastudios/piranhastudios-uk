@@ -1,0 +1,3 @@
+-- Placeholder for migration 0002, already applied on the remote database
+-- before this repo tracked migrations. Intentionally empty so the CLI
+-- migration history reconciles; the real DDL lives on the remote.

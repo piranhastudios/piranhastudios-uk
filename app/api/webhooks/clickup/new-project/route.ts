@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase-delivery'
 import { getTask, addTaskComment, extractEmail } from '@/lib/clickup'
+import { upsertDeal, ensureGuildQuest } from '@/lib/portal-server'
 
 const INCOMING_LIST = process.env.CLICKUP_INCOMING_LIST_ID
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://www.piranha-studios.co.uk'
@@ -29,6 +30,9 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = getSupabaseAdmin()
+
+    // Track the incoming deal in the DB.
+    await upsertDeal(task)
 
     // Invite user (creates account + sends magic link email)
     const { error: inviteError } = await supabase.auth.admin.inviteUserByEmail(email, {
@@ -60,6 +64,9 @@ export async function POST(req: NextRequest) {
     await supabase
       .from('client_onboarding')
       .upsert({ email, clickup_task_id: task_id }, { onConflict: 'email', ignoreDuplicates: true })
+
+    // If the deal already has a Budget, create the guild quest now (idempotent).
+    await ensureGuildQuest(email).catch(err => console.error('[new-project] guild quest', err))
 
     // Comment on ClickUp task with portal link
     await addTaskComment(
