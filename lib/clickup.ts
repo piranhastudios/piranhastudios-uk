@@ -3,6 +3,35 @@ const TOKEN = process.env.CLICKUP_API_TOKEN!
 
 export type ClickUpStatus = { status: string; color: string; type: string }
 
+export type ClickUpFieldOption = { id: string; label: string; color: string | null }
+export type ClickUpField = {
+  id: string
+  name: string
+  type: string
+  type_config?: { options?: Array<{ id: string; name?: string; label?: string; color?: string | null }> }
+}
+
+// Fetches a list's custom field definitions (GET /list/{id}/field). Cached for a
+// few minutes so option changes in ClickUp propagate without a call per request.
+export async function getListFields(listId: string): Promise<ClickUpField[]> {
+  const res = await fetch(`${API}/list/${listId}/field`, {
+    headers: { Authorization: TOKEN },
+    next: { revalidate: 300 },
+  })
+  if (!res.ok) throw new Error(`ClickUp getListFields failed: ${res.status}`)
+  const data = await res.json()
+  return (data.fields ?? []) as ClickUpField[]
+}
+
+// Normalises a drop_down/labels field's options to { id, label, color }.
+export function fieldOptions(field?: ClickUpField): ClickUpFieldOption[] {
+  return (field?.type_config?.options ?? []).map(o => ({
+    id: o.id,
+    label: o.label ?? o.name ?? '',
+    color: o.color ?? null,
+  }))
+}
+
 export type ClickUpComment = {
   id: string
   comment_text: string
@@ -27,6 +56,7 @@ export async function createTask(listId: string, body: {
   status?: string
   assignees?: number[]
   custom_fields?: { id: string; value: unknown }[]
+  tags?: string[]
 }) {
   const res = await fetch(`${API}/list/${listId}/task`, {
     method: 'POST',
@@ -34,6 +64,19 @@ export async function createTask(listId: string, body: {
     body: JSON.stringify(body),
   })
   if (!res.ok) throw new Error(`ClickUp createTask failed: ${res.status} ${await res.text()}`)
+  return res.json()
+}
+
+// Sets a single custom field on a task (POST /task/{id}/field/{field_id}).
+// Call best-effort (catch) for optional fields so a rejected value never blocks
+// the surrounding flow.
+export async function setTaskCustomField(taskId: string, fieldId: string, value: unknown) {
+  const res = await fetch(`${API}/task/${taskId}/field/${fieldId}`, {
+    method: 'POST',
+    headers: { Authorization: TOKEN, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ value }),
+  })
+  if (!res.ok) throw new Error(`ClickUp setTaskCustomField failed: ${res.status} ${await res.text()}`)
   return res.json()
 }
 

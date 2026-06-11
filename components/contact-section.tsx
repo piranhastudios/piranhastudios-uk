@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -114,11 +115,14 @@ export function ContactSection() {
             <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-lg">
               <h3 className="text-xl font-semibold text-[#e5e7eb] mb-4">Quick Start</h3>
               <p className="text-[#9ca3af] mb-6">
-                Ready to get started? Book your £50 evaluation call and let's discuss your project.
+                Ready to get started? Book a call and{" "}
+                <span className="text-[#fca5a5] font-semibold">new customers get a free website audit.</span>
               </p>
-              <Button className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl">
-                Book Evaluation Call
-              </Button>
+              <Link href="/book">
+                <Button className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl">
+                  Book a Call
+                </Button>
+              </Link>
             </div>
           </div>
 

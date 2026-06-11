@@ -28,6 +28,7 @@ import {
   type ProjectDashboard as DashboardData, type PortalComment, type TaskDetail,
   type ChatChannel, type HubMembers,
 } from '@/lib/data/portal'
+import { BookingPopupButton } from '@/components/booking/booking-popup-button'
 
 export default function ClientPortal() {
   const [session, setSession] = useState<Session | null>(null)
@@ -895,6 +896,33 @@ function ProjectDashboard({ form, stakeholders, brandAssets }: { form: FormData;
 
           {/* Who can access this hub */}
           <PeopleAccess />
+
+          {/* Accounts centre — book a call (Calendly popup), tagged with the
+              relevant ClickUp task id so Zapier attaches it to project vs account */}
+          {(data?.projectTaskId || data?.accountTaskId) && (
+            <section className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">Book a call</p>
+              <p className="mt-2 text-sm text-neutral-400">Grab some time with the team.</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {data?.projectTaskId && (
+                  <BookingPopupButton
+                    taskId={data.projectTaskId}
+                    name={form.primary_contact_name || form.business_name || null}
+                    label="Project meeting"
+                    className="bg-white text-black hover:bg-neutral-100 font-medium"
+                  />
+                )}
+                {data?.accountTaskId && (
+                  <BookingPopupButton
+                    taskId={data.accountTaskId}
+                    name={form.primary_contact_name || form.business_name || null}
+                    label="Account manager"
+                    className="bg-white/10 text-white hover:bg-white/20 font-medium border border-white/15"
+                  />
+                )}
+              </div>
+            </section>
+          )}
         </div>
 
         {/* RIGHT — chat */}

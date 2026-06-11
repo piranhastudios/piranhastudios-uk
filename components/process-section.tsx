@@ -3,8 +3,8 @@ import { Search, FileText, Code, TestTube, Rocket } from "lucide-react"
 const steps = [
   {
     icon: Search,
-    title: "Evaluate",
-    description: "Paid discovery call and project brief",
+    title: "Audit",
+    description: "Discovery call and a review of your current setup",
   },
   {
     icon: FileText,
@@ -18,13 +18,13 @@ const steps = [
   },
   {
     icon: TestTube,
-    title: "Pilot",
-    description: "Private alpha or closed beta test",
+    title: "Test",
+    description: "We test it with you to make sure you're happy",
   },
   {
     icon: Rocket,
     title: "Launch",
-    description: "Public alpha release with feedback loop",
+    description: "Public release with feedback loop",
   },
 ]
 

@@ -1,6 +1,5 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { CalendlyUrls } from "@/lib/data/calendly"
 import { Check, Clock, Package } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
@@ -93,30 +92,27 @@ const serviceCategories = [
       ],
     },
   },
-];
-
-const subscriptionPackages = [
   {
-    name: "Ongoing Support",
-    price: "From £500/month", 
-    description: "Keep your systems running and improving",
-    features: [
-      "Bug fixes and maintenance",
-      "Small improvements and updates",
-      "Priority support",
-    ],
-  },
-  {
-    name: "Technical Partner",
-    price: "From £2,000/month",
-    description: "We actively improve and grow your systems",
-    features: [
-      "Ongoing feature development",
-      "System optimisation",
-      "Monthly planning and roadmap",
-      "Priority access",
-    ],
-    popular: true,
+    id: "tech-advisory",
+    name: "Tech Advisory",
+    icon: "🧭",
+    service: {
+      name: "Tech Advisory",
+      description: "Expert guidance on your technology decisions: architecture, tooling, hiring, and roadmap, without committing to a full build.",
+      time: "One-off or ongoing",
+      deliverables: [
+        "Technical roadmap and recommendations",
+        "Architecture and tooling review",
+        "Vendor and hiring guidance",
+        "Clear next steps you can action",
+      ],
+      process: [
+        "Understand your goals and stack",
+        "Review what you have",
+        "Recommend a path forward",
+        "Support you as you execute",
+      ],
+    },
   },
 ];
 
@@ -132,10 +128,10 @@ export function ServicesSection() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
-            What We Build
+            What We Do
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
-            Pick what you need. We'll build it right.
+            Pick what you need. We'll handle the rest.
           </p>
         </div>
 
@@ -220,7 +216,7 @@ export function ServicesSection() {
                 <p className="text-[#9ca3af] mb-4">
                   Book a call and we'll tell you exactly what to build, how long it takes, and what it costs.
                 </p>
-                <Link href={CalendlyUrls.qa_url} target="_blank">
+                <Link href="/book">
                   <Button className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300">
                     Book a Call
                   </Button>
@@ -230,58 +226,18 @@ export function ServicesSection() {
           </div>
         </div>
 
-        {/* Monthly Support Packages */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center text-[#e5e7eb] mb-4">Monthly Support</h3>
-          <p className="text-center text-[#9ca3af] mb-12">Keep your systems running and improving</p>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {subscriptionPackages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border transition-all duration-500 hover:scale-105 flex flex-col justify-between ${
-                  pkg.popular
-                    ? "border-[#fca5a5]/50 shadow-2xl shadow-[#fca5a5]/20"
-                    : "border-white/10 hover:border-[#fca5a5]/30"
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-[#b91c1c] text-white px-4 py-2 rounded-full text-sm font-semibold">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div>
-                  <h4 className="text-xl font-bold text-[#e5e7eb] mb-2">{pkg.name}</h4>
-                  <p className="text-2xl font-bold text-[#fca5a5] mb-4">{pkg.price}</p>
-                  <p className="text-[#9ca3af] mb-6">{pkg.description}</p>
-
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-[#e5e7eb]">
-                        <Check className="h-4 w-4 text-[#fca5a5] mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Link href={CalendlyUrls.qa_url} target="_blank">
-                  <Button
-                    className={`w-full rounded-xl ${
-                      pkg.popular
-                        ? "bg-[#b91c1c] hover:bg-[#dc2626] text-white"
-                        : "bg-gray-800 hover:bg-[#b91c1c] text-[#e5e7eb] border border-white/20"
-                    }`}
-                  >
-                    Book a Call
-                  </Button>
-                </Link>
-              </div>
-            ))}
-          </div>
+        {/* Pricing */}
+        <div className="mt-20 max-w-3xl mx-auto text-center bg-white/5 backdrop-blur-md rounded-2xl p-10 border border-white/10 shadow-lg">
+          <h3 className="text-3xl font-bold text-[#e5e7eb] mb-4">Flexible Pricing</h3>
+          <p className="text-xl text-[#9ca3af] mb-8">
+            Our services start from{" "}
+            <span className="text-[#fca5a5] font-semibold">£100</span> and can accommodate a range of budgets.
+          </p>
+          <Link href="/book">
+            <Button className="bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl px-8 shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300">
+              Book a Call
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

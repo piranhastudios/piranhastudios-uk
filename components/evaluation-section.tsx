@@ -1,6 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button"
-import { CalendlyUrls } from "@/lib/data/calendly"
 import { CheckCircle2, Zap } from "lucide-react"
 import Link from "next/link"
 import { useAnalytics } from "./AnalyticsTracker"
@@ -113,7 +112,7 @@ export function EvaluationSection() {
                   </p>
                 </div>
 
-                <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '4-hour session' })}>
+                <Link href="/book" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '4-hour session' })}>
                   <Button
                     size="lg"
                     className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white py-6 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -169,7 +168,7 @@ export function EvaluationSection() {
                 </p>
               </div>
 
-              <Link href={CalendlyUrls.evaluation_url} target="_blank" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '2-week session' })}>
+              <Link href="/book" className="block" onClick={() => trackEvent('cta_click', { type: 'discovery session', plan: '2-week session' })}>
                 <Button
                   size="lg"
                   className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white py-6 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"
@@ -204,7 +203,7 @@ export function EvaluationSection() {
           <p className="text-xl text-[#fca5a5]">Everyone gets certainty.</p>
           
           <div className="mt-8">
-            <Link href={CalendlyUrls.qa_url} target="_blank">
+            <Link href="/book">
               <Button
                 variant="outline"
                 size="lg"

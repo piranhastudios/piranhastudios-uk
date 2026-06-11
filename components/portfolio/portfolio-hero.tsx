@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { CalendlyUrls } from "@/lib/data/calendly"
 import { ArrowRight, Code, Link, Users } from "lucide-react"
 
 export function PortfolioHero() {
@@ -56,7 +55,7 @@ export function PortfolioHero() {
         </div>
 
         {/* CTA */}
-        <Link href={CalendlyUrls.evaluation_url} target="_blank">
+        <Link href="/book">
           <Button
             size="lg"
             className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105"

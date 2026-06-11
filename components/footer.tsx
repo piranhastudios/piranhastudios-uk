@@ -77,8 +77,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
-                  Legal
+                <Link href="/legal?docKey=tos" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/legal?docKey=privacy" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>

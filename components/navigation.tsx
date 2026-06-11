@@ -3,9 +3,8 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, CircleHelp, Phone } from "lucide-react"
-import { CalendlyUrls } from "@/lib/data/calendly"
-import { StatusIndicator, isAcceptingProjects } from "@/components/status-indicator"
+import { Menu, X, Phone } from "lucide-react"
+import { StatusIndicator } from "@/components/status-indicator"
 
 const navigationItems = [
   { href: "/portfolio", label: "Work" },
@@ -43,25 +42,13 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            {isAcceptingProjects && (
-              <Link href={CalendlyUrls.evaluation_url} target="_blank">
-                <Button
-                  size="sm"
-                  className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-4 py-2 rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300 hover:scale-105"
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  Discovery Call
-                </Button>
-              </Link>
-            )}
-            <Link href={CalendlyUrls.qa_url} target="_blank">
+            <Link href="/book">
               <Button
-                variant={"outline"}
                 size="sm"
-                className="border-[#fca5a5] text-[#fca5a5] px-4 py-2 hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] text-lg rounded-xl transition-all duration-300"
+                className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-4 py-2 rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300 hover:scale-105"
               >
-                <CircleHelp className="mr-2 h-4 w-4" />
-                Book free Q&amp;A
+                <Phone className="mr-2 h-4 w-4" />
+                Discovery Call
               </Button>
             </Link>
           </div>
@@ -91,28 +78,15 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
-              <div className="px-3 py-2 space-y-2">
-                {isAcceptingProjects && (
-                  <Link href={CalendlyUrls.evaluation_url} target="_blank">
-                    <Button
-                      size="sm"
-                      className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Phone className="mr-2 h-4 w-4" />
-                      Discovery Call
-                    </Button>
-                  </Link>
-                )}
-                <Link href={CalendlyUrls.qa_url} target="_blank">
+              <div className="px-3 py-2">
+                <Link href="/book">
                   <Button
-                    variant="outline"
                     size="sm"
-                    className="w-full border-[#fca5a5] text-[#fca5a5] hover:bg-[#fca5a5]/10 hover:text-[#b91c1c] rounded-xl transition-all duration-300"
+                    className="w-full bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl"
                     onClick={() => setIsOpen(false)}
                   >
-                    <CircleHelp className="mr-2 h-4 w-4" />
-                    Book free Q&amp;A
+                    <Phone className="mr-2 h-4 w-4" />
+                    Discovery Call
                   </Button>
                 </Link>
               </div>

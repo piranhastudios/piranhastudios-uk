@@ -73,5 +73,5 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  return NextResponse.json({ contract, project, hasProject: !!projectTaskId, hasAccount: !!client.clickupAccountTaskId })
+  return NextResponse.json({ contract, project, hasProject: !!projectTaskId, hasAccount: !!client.clickupAccountTaskId, accountTaskId: client.clickupAccountTaskId, projectTaskId })
 }

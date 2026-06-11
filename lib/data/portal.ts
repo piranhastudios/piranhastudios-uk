@@ -326,7 +326,7 @@ export type SubtaskSummary = {
   complete: boolean; inReview: boolean; previewUrl: string | null
 }
 export type ProjectSummary = StatusSummary & { subtasks: SubtaskSummary[]; progress: number }
-export type ProjectDashboard = { contract: StatusSummary | null; project: ProjectSummary | null; hasProject: boolean; hasAccount: boolean }
+export type ProjectDashboard = { contract: StatusSummary | null; project: ProjectSummary | null; hasProject: boolean; hasAccount: boolean; accountTaskId: string | null; projectTaskId: string | null }
 
 export type ChatChannel = 'project' | 'account'
 export type PortalComment = { id: string; text: string; author: string; fromClient: boolean; date: string }
