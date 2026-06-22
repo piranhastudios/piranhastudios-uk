@@ -1,15 +1,16 @@
-import Link from "next/link"
-import Image from "next/image"
-import { getAllArticles, getFeaturedTags } from "@/lib/articles"
+import { getBlogPosts } from "@/lib/sanity/posts"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ResourcesClient } from "@/components/resources/resources-client"
 import { ResourcesSkeleton } from "@/components/resources/resources-skeleton"
 import { Suspense } from "react"
 
-export default function ResourcesPage() {
-  const articles = getAllArticles()
-  const featuredTags = getFeaturedTags()
+// Re-fetch from Sanity periodically so newly published posts appear.
+export const revalidate = 60
+
+export default async function ResourcesPage() {
+  const articles = await getBlogPosts()
+  const featuredTags: string[] = []
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#091113] via-[#0f1419] to-[#1a1f24]">

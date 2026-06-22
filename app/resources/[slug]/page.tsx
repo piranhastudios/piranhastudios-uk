@@ -1,22 +1,23 @@
 import Image from "next/image"
-import ReactMarkdown from "react-markdown"
-import remarkGfm from "remark-gfm"
-import { getArticleBySlug, getArticleSlugs } from "@/lib/articles"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
+import { PostBody } from "@/components/resources/post-body"
+import { getBlogPostBySlug, getBlogPostSlugs } from "@/lib/sanity/posts"
+
+export const revalidate = 60
 
 export async function generateStaticParams() {
-  const slugs = getArticleSlugs()
+  const slugs = await getBlogPostSlugs()
   return slugs.map((slug) => ({ slug }))
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const article = getArticleBySlug(slug)
+  const post = await getBlogPostBySlug(slug)
 
-  if (!article) {
+  if (!post) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#091113] via-[#0f1419] to-[#1a1f24] flex items-center justify-center">
         <div className="text-center">
@@ -29,10 +30,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     )
   }
 
-  // Remove m-dashes and clean content
-  const cleanContent = article.content
-    .replace(/—/g, "-") // Replace em dash with regular dash
-    .replace(/–/g, "-") // Replace en dash with regular dash
+  const date = post.publishedAt
+    ? new Date(post.publishedAt).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })
+    : null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#091113] via-[#0f1419] to-[#1a1f24]">
@@ -50,85 +50,25 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </Link>
 
           {/* Cover Image */}
-          {article.coverImage && (
+          {post.coverImage && (
             <div className="relative h-[400px] w-full rounded-3xl overflow-hidden mb-8 border border-white/10">
-              <Image
-                src={article.coverImage}
-                alt={article.title}
-                fill
-                className="object-cover"
-                priority
-              />
+              <Image src={post.coverImage} alt={post.title} fill className="object-cover" priority />
             </div>
           )}
 
-          {/* Article Content */}
-          <article className="prose prose-invert prose-lg max-w-none">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                h1: ({ children }) => (
-                  <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
-                    {children}
-                  </h1>
-                ),
-                h2: ({ children }) => (
-                  <h2 className="text-3xl font-bold mt-12 mb-4 text-[#e5e7eb]">{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 className="text-2xl font-bold mt-8 mb-3 text-[#e5e7eb]">{children}</h3>
-                ),
-                p: ({ children }) => <p className="text-[#9ca3af] mb-6 leading-relaxed">{children}</p>,
-                ul: ({ children }) => <ul className="list-disc list-inside mb-6 text-[#9ca3af] space-y-2">{children}</ul>,
-                ol: ({ children }) => <ol className="list-decimal list-inside mb-6 text-[#9ca3af] space-y-2">{children}</ol>,
-                li: ({ children }) => <li className="text-[#9ca3af]">{children}</li>,
-                blockquote: ({ children }) => (
-                  <blockquote className="border-l-4 border-[#fca5a5] pl-6 py-2 mb-6 italic text-[#e5e7eb]">
-                    {children}
-                  </blockquote>
-                ),
-                code: ({ children }) => (
-                  <code className="bg-white/5 px-2 py-1 rounded text-[#fca5a5] text-sm">
-                    {children}
-                  </code>
-                ),
-                pre: ({ children }) => (
-                  <pre className="bg-white/5 p-4 rounded-xl overflow-x-auto mb-6 border border-white/10">
-                    {children}
-                  </pre>
-                ),
-                a: ({ href, children }) => (
-                  <a
-                    href={href}
-                    className="text-[#fca5a5] hover:text-[#b91c1c] underline transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {children}
-                  </a>
-                ),
-                img: ({ src, alt }) => {
-                  // Skip the first image if it's the cover image
-                  if (src === article.coverImage?.replace(`/articles/${article.slug}/`, "")) {
-                    return null
-                  }
-                  return (
-                    <div className="relative w-full h-[400px] my-8 rounded-xl overflow-hidden border border-white/10">
-                      <Image
-                        src={typeof src === 'string' && src.startsWith("/") ? src : `/articles/${article.slug}/${src}`}
-                        alt={alt || ""}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )
-                },
-                hr: () => <hr className="border-white/10 my-12" />,
-              }}
-            >
-              {cleanContent}
-            </ReactMarkdown>
-          </article>
+          {/* Title + meta */}
+          <header className="mb-10">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
+              {post.title}
+            </h1>
+            <p className="text-[#9ca3af]">
+              {post.author}
+              {date ? ` · ${date}` : ""}
+            </p>
+          </header>
+
+          {/* Body */}
+          <PostBody value={post.body as React.ComponentProps<typeof PostBody>["value"]} />
         </div>
       </main>
 
