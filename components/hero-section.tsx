@@ -50,7 +50,7 @@ export function HeroSection() {
             {/* Subheadline */}
             <p className="text-xl md:text-2xl mb-12 text-[#9ca3af] leading-relaxed">
               We make the digital world simpler for founders and SMEs. Websites, online stores, and custom software,
-              built by a West Midlands studio that stays with you after launch.
+              built by a Stoke-on-Trent studio that stays with you after launch.
             </p>
 
             {/* CTA Buttons */}

@@ -16,7 +16,7 @@ export function Footer() {
                 Piranha Studios
               </span>
             </Link>
-            <p className="text-[#9ca3af] text-sm mb-6 max-w-md">Built in the West Midlands. Powered by open-source.</p>
+            <p className="text-[#9ca3af] text-sm mb-6 max-w-md">Built in Stoke-on-Trent. Powered by open-source.</p>
             <div className="flex space-x-4">
               <Link href="https://github.com/piranhastudios/" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                 <Github className="h-6 w-6" />
@@ -80,6 +80,11 @@ export function Footer() {
                 <Link href="/legal?docKey=privacy" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                   Privacy Policy
                 </Link>
+              </li>
+              <li>
+                <a href="/llms.txt" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                  About us (plain text)
+                </a>
               </li>
             </ul>
           </div>

@@ -27,6 +27,11 @@ const faqs = [
       "For Partner engagements, you do, delivered in your repositories. For Presence and Business, you own your domain, content and data, and can export at any time.",
   },
   {
+    question: "Where are you based, and do you work with clients outside Stoke-on-Trent?",
+    answer:
+      "We're based in Stoke-on-Trent, Staffordshire. We meet clients in person across Stoke-on-Trent and Staffordshire, and work remotely with founders and SMEs throughout the UK. Everything we build is delivered and supported online, so your location doesn't change the price or the timeline.",
+  },
+  {
     question: "What kind of projects do you take on?",
     answer:
       "Everything from one-page sites for local businesses to full platforms for funded startups in fintech, healthtech and e-commerce.",
