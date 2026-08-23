@@ -1,6 +1,44 @@
 const API = 'https://api.clickup.com/api/v2'
 const TOKEN = process.env.CLICKUP_API_TOKEN!
 
+/**
+ * Custom field ids on the CRM Deals list (901523772303).
+ * Email / Contact Name / Service/Product are space-level, so they share ids
+ * with the Leads list and the Service/Product option ids match too.
+ */
+export const DEALS_FIELD = {
+  dealValue: '31cd4163-26a5-409b-8bc9-7d92d682736c', // currency, GBP, MAJOR units
+  depositAmount: '0ea54494-e584-4af7-a6ed-5b4bbbeb15e7', // currency, GBP, MAJOR units
+  depositLink: '281160a4-cc4d-47bb-811b-5d9479855fa2', // url, written by Zapier
+  finalPaymentLink: '8ea32a6c-6644-436a-b183-232afc695f2e',
+  salesStage: 'a2ab1356-8371-4544-a476-58850cbaa4ff', // drop_down
+  crmItemType: 'e8d73248-dc82-4f3f-8af9-f9e260c4b530', // drop_down
+  email: '38721eaa-db8b-45d8-a38a-a0697db7d37a',
+  contactName: '20cc1dc0-5b9d-45cf-b0f2-612232f0b4e9',
+  serviceProduct: '87118070-1b4b-44de-9ea7-3e9b80c1bd7d', // labels
+  websiteLink: '75c46481-298b-46d8-a1a4-3962d1bc586a',
+} as const
+
+/** Sales Stage drop_down option ids. Drop-downs are set by option id. */
+export const SALES_STAGE = {
+  leadQualification: '13c68806-944d-447d-980d-4240468e7ae2',
+  newDeal: 'c4fd56ee-884f-457d-9c93-45775001ba67',
+  discovery: 'f72cf809-646e-4dab-afca-a61924842ccc',
+  proposal: '9ce41294-6124-4d0d-8440-366c22769a60',
+  negotiation: '22a75b68-d158-4a47-8aad-53e288a1b4d7',
+  depositPending: '36d12340-8b13-455e-8e9a-8cb2adc8fcce',
+  won: '5056f94b-56c6-4d88-a672-d2e10d757f04',
+  lost: '91c432ce-4305-44f8-8914-363b92228d97',
+} as const
+
+/** CRM Item Type drop_down option ids. */
+export const CRM_ITEM_TYPE = {
+  lead: 'a60e1e70-423a-4301-a3ec-bda4f6aaae55',
+  deal: 'c1cbcf7b-4ba7-4910-b3c5-25aef67fa290',
+  account: 'db8e863c-17e0-43d4-9600-c23cfd1a8b91',
+  contact: 'c6e10865-aa61-4599-9534-eca150884a57',
+} as const
+
 export type ClickUpStatus = { status: string; color: string; type: string }
 
 export type ClickUpFieldOption = { id: string; label: string; color: string | null }
@@ -162,26 +200,36 @@ export function extractPreviewUrl(task: Record<string, unknown>): string | null 
   return null
 }
 
-// Reads the deal's Budget (a ClickUp "currency" custom field, stored in major
-// units e.g. "5000" = £5000) and returns it in MINOR units (pence). Returns
-// null when no positive budget is set. Prefers a currency field named "budget".
+// Reads a deal's monetary value from a ClickUp "currency" custom field (stored
+// in MAJOR units e.g. "5000" = £5000) and returns it in MINOR units (pence).
+// Returns null when nothing positive is set.
+//
+// Field preference matters: on the Deals list "Budget" is a drop_down (a RAG
+// status, not money) and there are TWO currency fields. "Deposit Amount" sorts
+// before "Deal Value" by id, so a blind first-currency-field fallback would
+// return the deposit. Match by name first.
 export function extractBudgetMinor(task: Record<string, unknown>): number | null {
   const fields = task.custom_fields as Array<{ name?: string; type?: string; value?: unknown }> | undefined
   const toMinor = (v: unknown): number | null => {
     const n = typeof v === 'number' ? v : typeof v === 'string' ? Number(v) : NaN
     return Number.isFinite(n) && n > 0 ? Math.round(n * 100) : null
   }
-  for (const f of fields ?? []) {
-    if (f.type === 'currency' && (f.name ?? '').toLowerCase().includes('budget') && f.value != null) {
-      const m = toMinor(f.value)
-      if (m) return m
+  const currencyFields = (fields ?? []).filter(f => f.type === 'currency' && f.value != null)
+
+  // Most specific first: the deal's headline value, then a money "budget",
+  // then anything else that is currency (but never the deposit).
+  for (const wanted of ['deal value', 'budget']) {
+    for (const f of currencyFields) {
+      if ((f.name ?? '').toLowerCase().includes(wanted)) {
+        const m = toMinor(f.value)
+        if (m) return m
+      }
     }
   }
-  for (const f of fields ?? []) {
-    if (f.type === 'currency' && f.value != null) {
-      const m = toMinor(f.value)
-      if (m) return m
-    }
+  for (const f of currencyFields) {
+    if ((f.name ?? '').toLowerCase().includes('deposit')) continue
+    const m = toMinor(f.value)
+    if (m) return m
   }
   return null
 }

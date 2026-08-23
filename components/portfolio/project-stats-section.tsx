@@ -36,7 +36,7 @@ export function ProjectStatsSection() {
             Track Record
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
-            Numbers that matter — real impact for real businesses
+            Numbers that matter: real impact for real businesses
           </p>
         </div>
 

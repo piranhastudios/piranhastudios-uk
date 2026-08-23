@@ -147,7 +147,7 @@ export function TechStackSection() {
               Founder-Aligned Model
             </h3>
             <p className="text-[#9ca3af] leading-relaxed">
-              We don’t take equity or control — just a small upfront fee and a revenue share if you win. That means we only succeed when you do. You stay in charge. We stay accountable.
+              We don’t take equity or control, just a small upfront fee and a revenue share if you win. That means we only succeed when you do. You stay in charge. We stay accountable.
             </p>
           </div>
         </div>

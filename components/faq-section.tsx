@@ -1,41 +1,60 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
 const faqs = [
   {
-    question: "What kind of projects do you take on?",
+    question: "How fast can you get me online?",
     answer:
-      "Piranha Studios works with founders and SMEs that need stable, scalable digital infrastructure. We build SaaS platforms, marketplaces, data-driven dashboards, operational backends, healthcare systems, fintech tooling, and modern e-commerce setups. If you need a long-term technical partner rather than one-off freelancers, we’re a strong fit.",
+      "Presence sites go live within 48 hours of receiving your details. Business builds take 4 working days from the day we have your logo, photos and product list.",
   },
   {
-    question: "What does the initial discovery include?",
+    question: "Do I need to buy anything else?",
     answer:
-      "For small projects, we run a focused 4-hour discovery session to map out your goals, core features, user journeys, and technical approach. For larger or complex products, we run a full two-week discovery sprint covering architecture, data models, integrations, workflows, UX flows, and delivery planning. You always walk away with a clear, build-ready blueprint.",
+      "No. Domain, hosting and setup are included. Your site runs on our platform with a simple monthly subscription that covers hosting, updates and support.",
   },
   {
-    question: "Can I upgrade from a subscription to a full build later?",
+    question: "What happens after launch?",
     answer:
-      "Yes. Many clients start on a subscription to validate ideas, launch early features, or get initial traction. When the business is ready, we transition into a full build. Everything created during the subscription phase rolls into the final system with no wasted work.",
+      "We don't disappear. Your subscription includes support, and you can upgrade from a one-page site to a full store, or from a store to custom software, without rebuilding from scratch.",
   },
   {
-    question: "Do you help after the MVP is live?",
+    question: "Can I start small and upgrade later?",
     answer:
-      "Yes. Ongoing support is part of how we work. Subscription clients stay with us month-to-month, and full-build clients get structured post-launch support with the option to continue on a long-term plan. We stay involved to keep the system stable, secure, and evolving.",
+      "Yes, that's the point. Every Presence site has a shop built in, dormant until you need it. Switching it on is a conversation, not a rebuild.",
   },
   {
     question: "Who owns the code and IP?",
     answer:
-      "You own everything. All code, architecture, designs, and intellectual property belong to you. We build using open, modern technologies so you’re never locked into proprietary platforms or dependent on a single developer.",
+      "For Partner engagements, you do, delivered in your repositories. For Presence and Business, you own your domain, content and data, and can export at any time.",
   },
   {
-    question: "Do you support e-commerce, health, and fintech projects?",
+    question: "What kind of projects do you take on?",
     answer:
-      "Yes. We work across multiple industries, but we specialise in marketplaces, SaaS products, and operational platforms. For regulated sectors like healthcare and finance, we align architecture with the required compliance standards during discovery.",
+      "Everything from one-page sites for local businesses to full platforms for funded startups in fintech, healthtech and e-commerce.",
   },
-];
+]
 
+// Derived from the same array the page renders, so the rich result can never
+// drift from what a visitor actually reads.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+}
 
 export function FAQSection() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-transparent to-[#0f1419]/50">
+    <section id="faq" className="py-20 px-6 scroll-mt-20 bg-gradient-to-b from-transparent to-[#0f1419]/50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
           Frequently Asked Questions

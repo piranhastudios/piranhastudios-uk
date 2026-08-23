@@ -1,30 +1,25 @@
-import { Search, FileText, Code, TestTube, Rocket } from "lucide-react"
+import { Package, FileText, Code, Rocket } from "lucide-react"
 
 const steps = [
   {
-    icon: Search,
-    title: "Audit",
-    description: "Discovery call and a review of your current setup",
+    icon: Package,
+    title: "Pick a package",
+    description: "Or book a free call if you're not sure which one fits",
   },
   {
     icon: FileText,
-    title: "Plan",
-    description: "Scope, architecture docs, roadmap",
+    title: "Send us your brief",
+    description: "We'll ask for exactly what we need: logo, photos, products, colours",
   },
   {
     icon: Code,
-    title: "Build",
-    description: "Lean, open-source MVP build in as little as 4 weeks",
-  },
-  {
-    icon: TestTube,
-    title: "Test",
-    description: "We test it with you to make sure you're happy",
+    title: "We build",
+    description: "48 hours for Presence, 4 working days for Business",
   },
   {
     icon: Rocket,
-    title: "Launch",
-    description: "Public release with feedback loop",
+    title: "You go live",
+    description: "With a handover so you can run it yourself, and us behind you if you'd rather not",
   },
 ]
 
@@ -54,7 +49,7 @@ export function ProcessSection() {
           {/* Connection line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#fca5a5]/20 via-[#fca5a5]/50 to-[#fca5a5]/20 transform -translate-y-1/2"></div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <div key={index} className="relative group">
                 <div className="h-full bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-lg hover:shadow-[#fca5a5]/20 transition-all duration-500 hover:scale-105 hover:bg-white/10 text-center">

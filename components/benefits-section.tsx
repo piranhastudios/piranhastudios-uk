@@ -1,25 +1,25 @@
-import { Rocket, DollarSign, Wrench, Handshake, PoundSterling } from "lucide-react"
+import { Rocket, Wrench, Handshake, PoundSterling } from "lucide-react"
 
 const benefits = [
   {
     icon: Rocket,
     title: "Built to generate revenue",
-    description: "We don’t just launch stores, we build systems designed to convert and sell from day one",
+    description: "We don't just launch websites, we build systems designed to convert and sell from day one",
   },
   {
     icon: PoundSterling,
-    title: "Focused on ROI, not just design",
-    description: "Every decision is made to increase revenue, not just make things look good",
+    title: "Honest prices, no quote theatre",
+    description: "Our packages are published. You know what it costs before you talk to us",
   },
   {
     icon: Wrench,
     title: "Everything works together",
-    description: "Your store, payments, and internal tools are fully connected so your business runs smoothly",
+    description: "Your site, payments, and tools are fully connected so your business runs smoothly",
   },
   {
     icon: Handshake,
     title: "A technical partner, not just a builder",
-    description: "We stay involved to improve, optimise, and grow your systems over time",
+    description: "We host, support, and improve what we build. You're never left holding a website you can't run",
   },
 ]
 

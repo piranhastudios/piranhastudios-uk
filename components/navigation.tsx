@@ -7,6 +7,7 @@ import { Menu, X, Phone } from "lucide-react"
 import { StatusIndicator } from "@/components/status-indicator"
 
 const navigationItems = [
+  { href: "/#packages", label: "Pricing" },
   { href: "/portfolio", label: "Work" },
   { href: "/resources", label: "Resources" },
   { href: "/#services", label: "Services" },
@@ -48,7 +49,7 @@ export function Navigation() {
                 className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-4 py-2 rounded-xl shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300 hover:scale-105"
               >
                 <Phone className="mr-2 h-4 w-4" />
-                Discovery Call
+                Book a Call
               </Button>
             </Link>
           </div>
@@ -86,7 +87,7 @@ export function Navigation() {
                     onClick={() => setIsOpen(false)}
                   >
                     <Phone className="mr-2 h-4 w-4" />
-                    Discovery Call
+                    Book a Call
                   </Button>
                 </Link>
               </div>

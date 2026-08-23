@@ -1,6 +1,6 @@
 const testimonials = [
   {
-    quote: "My time is my own again — our systems run smoother than ever.",
+    quote: "My time is my own again. Our systems run smoother than ever.",
     name: "Dr Adeline Afong",
     title: "Founder, Skeendeep",
   },
@@ -10,7 +10,7 @@ const testimonials = [
     title: "Chairman of the Dating Agency Association",
   },
   {
-    quote: "Jake understood our vision immediately and working with him exactly what we needed.",
+    quote: "Jake understood our vision immediately and working with him was exactly what we needed.",
     name: "Joel Blake (OBE)",
     title: "Founder, GFA Exchange",
   },

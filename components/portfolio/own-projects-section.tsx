@@ -19,7 +19,7 @@ const ownProjects = [
   {
     title: "Habitate.uk",
     description:
-      "A mobile-first co-living subscription platform allowing members to live flexibly across a network of managed homes. For a fixed monthly fee, tenants can move between properties in different cities—solving London’s cost crisis and Northern under-occupancy. The app handles payments, property discovery, room switching, and tenant onboarding.",
+      "A mobile-first co-living subscription platform allowing members to live flexibly across a network of managed homes. For a fixed monthly fee, tenants can move between properties in different cities, solving London’s cost crisis and Northern under-occupancy. The app handles payments, property discovery, room switching, and tenant onboarding.",
     tech: ["React", "React-Native", "Supabase", "Clerk", "Stripe", "Next.js", "Tailwind CSS"],
     status: "MVP in Development",
     revenue: "Not launched (subscription model planned)",
@@ -39,7 +39,7 @@ export function OwnProjectsSection() {
             Our Own Ventures
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
-            We don't just build for clients — we validate ideas and grow our own digital products using the same proven
+            We don't just build for clients, we validate ideas and grow our own digital products using the same proven
             process.
           </p>
         </div>

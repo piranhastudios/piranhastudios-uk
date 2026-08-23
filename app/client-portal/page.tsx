@@ -627,8 +627,8 @@ function UnauthScreen() {
         </form>
         <p className="text-xs text-neutral-600 mt-8">
           Need help?{' '}
-          <a href="mailto:hello@piranha-studios.co.uk" className="text-neutral-400 underline underline-offset-4 hover:text-white transition-colors">
-            hello@piranha-studios.co.uk
+          <a href="mailto:info@piranha-studios.co.uk" className="text-neutral-400 underline underline-offset-4 hover:text-white transition-colors">
+            info@piranha-studios.co.uk
           </a>
         </p>
       </div>

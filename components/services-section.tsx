@@ -10,9 +10,9 @@ const serviceCategories = [
     name: "E-commerce",
     icon: "🛒",
     service: {
-      name: "E-commerce Store Build",
-      description: "We build stores designed to convert — not just look good. From product setup to checkout, everything is built to drive revenue.",
-      time: "2–6 weeks",
+      name: "Custom E-commerce Build",
+      description: "For stores that need more than the Business package. Custom catalogues, bespoke checkout flows and integrations, built around how you actually sell.",
+      time: "2 to 6 weeks (custom builds)",
       deliverables: [
         "Fully functional store ready to sell",
         "Payments, shipping, and checkout setup",
@@ -33,8 +33,8 @@ const serviceCategories = [
     icon: "📱",
     service: {
       name: "Custom App Development",
-      description: "We build web and mobile apps that solve real problems — from MVP to full-scale product.",
-      time: "4–12 weeks",
+      description: "We build web and mobile apps that solve real problems, from MVP to full-scale product.",
+      time: "4 to 12 weeks",
       deliverables: [
         "Working app (web, mobile, or both)",
         "User authentication and data management",
@@ -55,8 +55,8 @@ const serviceCategories = [
     icon: "⚙️",
     service: {
       name: "Custom Internal Tools",
-      description: "We build tools that automate your operations and save time — from dashboards to admin systems.",
-      time: "3–8 weeks",
+      description: "We build tools that automate your operations and save time, from dashboards to admin systems.",
+      time: "3 to 8 weeks",
       deliverables: [
         "Custom dashboards or admin panels",
         "Workflow automation",
@@ -77,8 +77,8 @@ const serviceCategories = [
     icon: "🔗",
     service: {
       name: "System Integrations",
-      description: "We connect your tools so everything works together — payments, CRM, inventory, and more.",
-      time: "1–4 weeks",
+      description: "We connect your tools so everything works together: payments, CRM, inventory, and more.",
+      time: "1 to 4 weeks",
       deliverables: [
         "Connected systems (Stripe, CRM, etc.)",
         "Automated workflows",
@@ -123,7 +123,7 @@ export function ServicesSection() {
   const service = currentCategory.service;
 
   return (
-    <section id="services" className="py-20 px-6 bg-gradient-to-b from-transparent to-[#0f1419]/50">
+    <section id="services" className="py-20 px-6 scroll-mt-20 bg-gradient-to-b from-transparent to-[#0f1419]/50">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -131,7 +131,7 @@ export function ServicesSection() {
             What We Do
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
-            Pick what you need. We'll handle the rest.
+            Beyond the packages: custom work, scoped and quoted after a call.
           </p>
         </div>
 
@@ -228,17 +228,26 @@ export function ServicesSection() {
 
         {/* Pricing */}
         <div className="mt-20 max-w-3xl mx-auto text-center bg-white/5 backdrop-blur-md rounded-2xl p-10 border border-white/10 shadow-lg">
-          <h3 className="text-3xl font-bold text-[#e5e7eb] mb-4">Flexible Pricing</h3>
+          <h3 className="text-3xl font-bold text-[#e5e7eb] mb-4">Not sure which you need?</h3>
           <p className="text-xl text-[#9ca3af] mb-8">
-            Our services start from{" "}
-            <span className="text-[#fca5a5] font-semibold">£100</span> and can accommodate a range of budgets.
+            Our packages start at{" "}
+            <span className="text-[#fca5a5] font-semibold">£100</span>. Anything custom gets a fixed quote after
+            one call, before any work starts.
           </p>
-          <Link href="/book">
-            <Button className="bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl px-8 shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300">
-              Book a Call
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/#packages">
+              <Button className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-[#e5e7eb] border border-white/20 rounded-xl px-8 transition-all duration-300">
+                See Packages
+              </Button>
+            </Link>
+            <Link href="/book">
+              <Button className="w-full sm:w-auto bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-xl px-8 shadow-lg hover:shadow-[#b91c1c]/25 transition-all duration-300">
+                Book a Call
+              </Button>
+            </Link>
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -16,7 +16,7 @@ export function Footer() {
                 Piranha Studios
               </span>
             </Link>
-            <p className="text-[#9ca3af] text-sm mb-6 max-w-md">Built in the West-Midlands. Powered by open-source.</p>
+            <p className="text-[#9ca3af] text-sm mb-6 max-w-md">Built in the West Midlands. Powered by open-source.</p>
             <div className="flex space-x-4">
               <Link href="https://github.com/piranhastudios/" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                 <Github className="h-6 w-6" />
@@ -32,11 +32,16 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="text-[#e5e7eb] font-semibold mb-4">Services</h4>
+            <h4 className="text-[#e5e7eb] font-semibold mb-4">Explore</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/#packages" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                  Pricing
                 </Link>
               </li>
               <li>
@@ -45,13 +50,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
-                  Evaluation
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
-                  Pricing
+                <Link href="/book" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                  Book a Call
                 </Link>
               </li>
             </ul>
@@ -62,17 +62,12 @@ export function Footer() {
             <h4 className="text-[#e5e7eb] font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                <Link href="/resources" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
+                <Link href="/#faq" className="text-[#9ca3af] hover:text-[#fca5a5] transition-colors duration-300">
                   FAQ
                 </Link>
               </li>

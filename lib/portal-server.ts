@@ -268,11 +268,26 @@ export async function ensureCrmRecords(email: string): Promise<void> {
     }
   }
 
-  // Deal — the project we're working on (Deal Value left empty).
+  // Deal - the project we're working on (Deal Value left empty).
   if (!row.clickup_deal_task_id && await claimColumn(email, 'clickup_deal_task_id')) {
     try {
+      // The website package flow may already have filed a Deal for this person,
+      // with the money on it. Adopt that one rather than opening a second.
+      const { data: existing } = await admin
+        .from('deals')
+        .select('clickup_task_id')
+        .eq('email', email)
+        .eq('list_id', DEALS_LIST)
+        .order('updated_at', { ascending: false })
+        .limit(1)
+      const adopted = existing?.[0]?.clickup_task_id
+      if (adopted) {
+        await admin.from('client_onboarding').update({ clickup_deal_task_id: adopted }).eq('email', email)
+        return
+      }
+
       const created = await createTask(DEALS_LIST, {
-        name: row.project_name || row.business_name || `Project — ${email}`,
+        name: row.project_name || row.business_name || `Project for ${email}`,
         description: `Project for ${row.business_name || email}, created from the completed onboarding prep pack.`,
         custom_fields: baseFields,
       })

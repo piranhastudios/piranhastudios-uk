@@ -1,5 +1,5 @@
 /**
- * Lead intake endpoint — POST /api/leads
+ * Lead intake endpoint: POST /api/leads
  *
  * Creates a task in the ClickUp Leads list from the native intake form and
  * returns its id. The id is handed to the Calendly embed (as salesforce_uuid)
@@ -12,6 +12,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { createTask, setTaskCustomField, getListFields, fieldOptions } from '@/lib/clickup'
+import { getPackage, depositMinor, formatGBP } from '@/lib/data/packages'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -49,11 +50,12 @@ const LeadSchema = z.object({
   budget: z.string().trim().max(100).optional().or(z.literal('')),
   services: z.array(z.string().uuid()).max(20).optional(),
   message: z.string().trim().max(5000).optional().or(z.literal('')),
+  packageId: z.string().trim().max(50).optional().or(z.literal('')),
   wantsAudit: z.boolean().optional(),
   websiteUrl: z.string().trim().max(500).optional().or(z.literal('')),
 })
 
-// ClickUp url fields reject scheme-less values — normalise "example.com".
+// ClickUp url fields reject scheme-less values, so normalise "example.com".
 const normaliseUrl = (raw: string) =>
   /^https?:\/\//i.test(raw) ? raw : `https://${raw}`
 
@@ -69,9 +71,24 @@ export async function POST(req: NextRequest) {
     }
 
     const d = parsed.data
-    const serviceLabels = d.services?.length ? await resolveServiceLabels(d.services) : []
+    const pkg = getPackage(d.packageId)
+
+    // A chosen package implies its ClickUp Service/Product option, so the lead
+    // lands correctly categorised even though the form hid the picker.
+    const serviceIds = Array.from(
+      new Set([...(d.services ?? []), ...(pkg ? [pkg.clickUpServiceId] : [])]),
+    )
+    const serviceLabels = serviceIds.length ? await resolveServiceLabels(serviceIds) : []
+
+    const deposit = pkg ? depositMinor(pkg) : null
+    const packageLine = pkg
+      ? deposit !== null
+        ? `Package: ${pkg.name} (${pkg.price}${pkg.priceNote}). Deposit due: ${formatGBP(deposit)}`
+        : `Package: ${pkg.name} (${pkg.price}${pkg.priceNote}). Scoped on the call, no deposit`
+      : null
 
     const description = [
+      packageLine,
       `Email: ${d.email}`,
       d.company ? `Company: ${d.company}` : null,
       d.budget ? `Budget: ${d.budget}` : null,
@@ -85,12 +102,14 @@ export async function POST(req: NextRequest) {
 
     // Safe-to-inline fields at creation; tags applied here too.
     const task = await createTask(LEADS_LIST_ID, {
-      name: d.company ? `${d.name} (${d.company})` : d.name,
+      name: [pkg ? `[${pkg.name}]` : null, d.company ? `${d.name} (${d.company})` : d.name]
+        .filter(Boolean)
+        .join(' '),
       description,
       custom_fields: [
         { id: FIELD.email, value: d.email },
         { id: FIELD.contactName, value: d.name },
-        ...(d.services?.length ? [{ id: FIELD.serviceProduct, value: d.services }] : []),
+        ...(serviceIds.length ? [{ id: FIELD.serviceProduct, value: serviceIds }] : []),
       ],
       ...(d.wantsAudit ? { tags: [AUDIT_TAG] } : {}),
     })

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Search, Zap } from "lucide-react"
+import { ArrowRight, Zap } from "lucide-react"
 import Link from "next/link"
 import { StatusIndicator, isAcceptingProjects } from "@/components/status-indicator"
 
@@ -44,45 +44,34 @@ export function HeroSection() {
 
             {/* Main headline */}
             <h1 className="text-3xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent" style={{lineHeight: 1.2}}>
-              Increase your revenue with better systems
+              Get your business online. Properly.
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl mb-12 text-[#9ca3af] leading-relaxed">
-              From e-commerce stores to custom apps, we build and connect the systems that help your business sell more and run smoothly.
+              We make the digital world simpler for founders and SMEs. Websites, online stores, and custom software,
+              built by a West Midlands studio that stays with you after launch.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6">
-              {isAcceptingProjects ? (
-                <Link href="/book">
-                  <Button
-                    size="lg"
-                    className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-[#b91c1c]/20"
-                  >
-                    <Zap className="mr-2 h-5 w-5" />
-                    Book a Call
-                  </Button>
-                </Link>
-              ) : (
-                <Link href="/book">
-                  <Button
-                    size="lg"
-                    className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-[#b91c1c]/20"
-                  >
-                    <Zap className="mr-2 h-5 w-5" />
-                    Get Notified When We’re Accepting Projects
-                  </Button>
-                </Link>
-              )}
+              <Link href="#packages">
+                <Button
+                  size="lg"
+                  className="bg-[#b91c1c] hover:bg-[#dc2626] text-white px-8 py-4 text-lg rounded-2xl shadow-lg hover:shadow-[#b91c1c]/25 hover:shadow-2xl transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-[#b91c1c]/20"
+                >
+                  <ArrowRight className="mr-2 h-5 w-5" />
+                  See Packages
+                </Button>
+              </Link>
               <Link href="/book">
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-[#fca5a5]/30 text-[#fca5a5] hover:bg-[#fca5a5]/10 px-8 py-4 text-lg rounded-2xl backdrop-blur-sm hover:border-[#fca5a5]/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#fca5a5]/20 hover:text-[#fca5a5]/90"
                 >
-                  <Search className="mr-2 h-5 w-5" />
-                  Get a Free Audit
+                  <Zap className="mr-2 h-5 w-5" />
+                  {isAcceptingProjects ? "Book a Free Call" : "Get Notified When We're Accepting Projects"}
                 </Button>
               </Link>
             </div>

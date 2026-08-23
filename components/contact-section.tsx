@@ -103,7 +103,7 @@ export function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-[#fca5a5] mr-3" />
-                  <span className="text-[#9ca3af]">info@piranhastudios.co.uk</span>
+                  <span className="text-[#9ca3af]">info@piranha-studios.co.uk</span>
                 </div>
                 <div className="flex items-center">
                   <MessageSquare className="h-5 w-5 text-[#fca5a5] mr-3" />

@@ -23,7 +23,7 @@ export function PortfolioHero() {
 
         {/* Subheadline */}
         <p className="text-xl md:text-2xl mb-12 text-[#9ca3af] max-w-4xl mx-auto leading-relaxed">
-          From internal ventures to client MVPs — see how we turn ideas into profitable digital products using lean,
+          From internal ventures to client MVPs, see how we turn ideas into profitable digital products using lean,
           open-source technology stacks.
         </p>
 
