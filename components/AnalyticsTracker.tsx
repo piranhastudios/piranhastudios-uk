@@ -1,7 +1,6 @@
 'use client'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from "@vercel/analytics/next"
-import { usePathname, useSearchParams } from "next/navigation"
 import { useEffect, useCallback } from "react"
 import { usePostHog } from 'posthog-js/react'
 
