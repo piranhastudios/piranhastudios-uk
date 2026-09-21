@@ -3,7 +3,7 @@ name: replay-vision-scanner-user-frustration
 description: The frustration monitor brief for Replay vision
 metadata:
   author: PostHog
-  version: 1.53.0
+  version: 1.54.1
 ---
 
 # Frustration scanner (monitor)

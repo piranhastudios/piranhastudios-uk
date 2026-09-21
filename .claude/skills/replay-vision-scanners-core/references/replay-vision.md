@@ -49,13 +49,18 @@ Each of these maps to a [scanner type](/docs/replay-vision/scanner-types.md).
 -   **Authoring a scanner?** See [creating scanners](/docs/replay-vision/creating-scanners.md) for prompt patterns, filters, and sampling.
 -   **Already have observations?** Learn how to [read them and query them as events](/docs/replay-vision/observations.md) to build insights, dashboards, and alerts.
 -   **Is the scanner getting it right?** Rate results and apply AI configuration recommendations on the [calibration tab](/docs/replay-vision/calibration.md).
--   **Want to be notified?** Set up scheduled [digests and alerts](/docs/replay-vision/actions.md) that push a scanner's findings to Slack or a webhook.
+-   **Want a regular write-up?** Put a [scout](/docs/replay-vision/scouts.md) on the scanner to read its findings on a schedule and report what's worth a look.
+-   **Want to be notified?** Add an [alert](/docs/replay-vision/alerts.md) that fires on matching observations or a metric threshold, and sends to Slack or a webhook.
 -   **Hit a snag?** Check [troubleshooting](/docs/replay-vision/troubleshooting.md).
 
 ## Further reading
 
 -   [Session Replay](/docs/session-replay.md)
 -   [Find replays with PostHog AI](/docs/session-replay/find-replays-ai.md)
+
+**Chat with other Replay Vision users**
+
+Other teams are pointing scanners at their own products. Join the [PostHog Discord](https://discord.gg/t57vmkcm95) to ask what their scanners caught, post the prompts that work for you, and share feedback with the people who build it.
 
 ### Still have questions?
 

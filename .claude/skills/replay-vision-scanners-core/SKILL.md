@@ -3,7 +3,7 @@ name: replay-vision-scanners-core
 description: Shared mechanics for creating Replay vision scanners
 metadata:
   author: PostHog
-  version: 1.53.0
+  version: 1.54.1
 ---
 
 # Replay vision scanner mechanics

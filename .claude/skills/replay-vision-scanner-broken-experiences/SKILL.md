@@ -3,7 +3,7 @@ name: replay-vision-scanner-broken-experiences
 description: The breakage monitor brief for Replay vision
 metadata:
   author: PostHog
-  version: 1.53.0
+  version: 1.54.1
 ---
 
 # Breakage scanner (monitor)
