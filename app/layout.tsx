@@ -14,9 +14,9 @@ const inter = Inter({ subsets: ["latin"] })
 const SITE_URL = "https://piranha-studios.co.uk"
 
 export const metadata: Metadata = {
-  title: "Web Design & Software Development Stoke-on-Trent | Piranha Studios",
+  title: "Web Design & Software Development — West Midlands | Piranha Studios",
   description:
-    "Web design and software development studio in Stoke-on-Trent, Staffordshire. Websites from £100, online stores from £500, custom software on retainer. UK-wide.",
+    "Technical consulting studio in the West Midlands. Websites from £100, online stores from £500, custom software delivered and supported. UK-wide.",
   keywords: [
     "Piranha Studios",
     "web design Stoke-on-Trent",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Piranha Studios: Websites, Stores & Software for Founders & SMEs",
     description:
-      "Get online from £100. Start selling from £500. Or bring us in as your tech team. Built in Stoke-on-Trent.",
+      "Get online from £100. Start selling from £500. Or bring us in as your tech team. Based in the West Midlands.",
     url: SITE_URL,
     siteName: "Piranha Studios",
     locale: "en_GB",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Piranha Studios: Websites, Stores & Software for Founders & SMEs",
     description:
-      "Get online from £100. Start selling from £500. Or bring us in as your tech team. Built in Stoke-on-Trent.",
+      "Get online from £100. Start selling from £500. Or bring us in as your tech team. Based in the West Midlands.",
   },
   robots: {
     index: true,
@@ -83,19 +83,18 @@ const localBusinessSchema = {
   "@id": SITE_URL,
   name: "Piranha Studios",
   description:
-    "Software development studio based in Stoke-on-Trent, Staffordshire, building websites, online stores and custom software for founders and SMEs. One-page websites from £100 live in 48 hours, e-commerce stores from £500 live in 4 working days, and embedded technical teams from £600 per month. Fixed-price packages start with a 30% deposit, balance due on completion. Domain, hosting, GDPR compliance setup and ongoing support are included. Work covers business websites, online stores, SaaS platforms and MVPs, customer portals, internal tools and dashboards, and integrations for payments, CRM and inventory. Built on open-source technology including Next.js, React, TypeScript and PostgreSQL; clients own their code and IP. Delivered in fintech, healthtech, e-commerce, hospitality and professional services. In person across Stoke-on-Trent and Staffordshire, remote throughout the UK.",
+    "Software development studio based in Stoke-on-Trent, Staffordshire, building websites, online stores and custom software for founders and SMEs. One-page websites from £100 live in 48 hours, e-commerce stores from £500 live in 4 working days, and embedded technical teams from £600 per month. Fixed-price packages start with a 30% deposit, balance due on completion. Domain, hosting, GDPR compliance setup and ongoing support are included. Work covers business websites, online stores, SaaS platforms and MVPs, customer portals, internal tools and dashboards, and integrations for payments, CRM and inventory. Built on open-source technology including Next.js, React, TypeScript and PostgreSQL; clients own their code and IP. Delivered in fintech, healthtech, e-commerce, hospitality and professional services. In person across the West Midlands, remote throughout the UK.",
   slogan: "Get your business online. Properly.",
   url: SITE_URL,
   email: "info@piranha-studios.co.uk",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Stoke-on-Trent",
-    addressRegion: "Staffordshire",
+    addressLocality: "West Midlands",
+    addressRegion: "West Midlands",
     addressCountry: "GB",
   },
   areaServed: [
     { "@type": "City", name: "Stoke-on-Trent" },
-    { "@type": "AdministrativeArea", name: "Staffordshire" },
     { "@type": "AdministrativeArea", name: "West Midlands" },
     { "@type": "Country", name: "United Kingdom" },
   ],

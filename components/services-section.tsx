@@ -6,111 +6,112 @@ import { useState } from "react"
 
 const serviceCategories = [
   {
-    id: "ecommerce",
-    name: "E-commerce",
-    icon: "🛒",
-    service: {
-      name: "Custom E-commerce Build",
-      description: "For stores that need more than the Business package. Custom catalogues, bespoke checkout flows and integrations, built around how you actually sell.",
-      time: "2 to 6 weeks (custom builds)",
-      deliverables: [
-        "Fully functional store ready to sell",
-        "Payments, shipping, and checkout setup",
-        "Mobile-optimised design",
-        "Analytics and tracking",
-      ],
-      process: [
-        "Understand your product and customers",
-        "Design store structure",
-        "Build and configure",
-        "Test and launch",
-      ],
-    },
-  },
-  {
-    id: "custom-apps",
-    name: "Custom Apps",
-    icon: "📱",
-    service: {
-      name: "Custom App Development",
-      description: "We build web and mobile apps that solve real problems, from MVP to full-scale product.",
-      time: "4 to 12 weeks",
-      deliverables: [
-        "Working app (web, mobile, or both)",
-        "User authentication and data management",
-        "Scalable backend infrastructure",
-        "App store deployment (if mobile)",
-      ],
-      process: [
-        "Define core features and scope",
-        "Design and prototype",
-        "Build in sprints",
-        "Test and deploy",
-      ],
-    },
-  },
-  {
-    id: "internal-tools",
-    name: "Internal Tools",
-    icon: "⚙️",
-    service: {
-      name: "Custom Internal Tools",
-      description: "We build tools that automate your operations and save time, from dashboards to admin systems.",
-      time: "3 to 8 weeks",
-      deliverables: [
-        "Custom dashboards or admin panels",
-        "Workflow automation",
-        "User roles and permissions",
-        "Clean, simple interface",
-      ],
-      process: [
-        "Identify bottlenecks",
-        "Design system",
-        "Build and iterate",
-        "Deploy and refine",
-      ],
-    },
-  },
-  {
-    id: "integrations",
-    name: "Integrations",
-    icon: "🔗",
-    service: {
-      name: "System Integrations",
-      description: "We connect your tools so everything works together: payments, CRM, inventory, and more.",
-      time: "1 to 4 weeks",
-      deliverables: [
-        "Connected systems (Stripe, CRM, etc.)",
-        "Automated workflows",
-        "Data syncing across platforms",
-      ],
-      process: [
-        "Audit current systems",
-        "Map integrations",
-        "Implement connections",
-        "Test and monitor",
-      ],
-    },
-  },
-  {
-    id: "tech-advisory",
-    name: "Tech Advisory",
+    id: "strategy-advisory",
+    name: "Strategy and advisory",
     icon: "🧭",
     service: {
-      name: "Tech Advisory",
-      description: "Expert guidance on your technology decisions: architecture, tooling, hiring, and roadmap, without committing to a full build.",
-      time: "One-off or ongoing",
+      name: "Strategy and advisory",
+      description: "Architecture reviews, roadmaps, tooling decisions and help hiring engineers, explained in plain English.",
+      time: "Project-based or ongoing",
       deliverables: [
-        "Technical roadmap and recommendations",
-        "Architecture and tooling review",
-        "Vendor and hiring guidance",
-        "Clear next steps you can action",
+        "Technical roadmaps and recommendations",
+        "Architecture and tooling reviews",
+        "Hiring guidance for technical roles",
+        "Plain-English explanations and next steps",
       ],
       process: [
-        "Understand your goals and stack",
-        "Review what you have",
-        "Recommend a path forward",
-        "Support you as you execute",
+        "Understand your business goals",
+        "Assess your current technical landscape",
+        "Develop strategic recommendations",
+        "Provide ongoing guidance and support",
+      ],
+    },
+  },
+  {
+    id: "platforms-software",
+    name: "Platforms and software",
+    icon: "💻",
+    service: {
+      name: "Platforms and software",
+      description: "SaaS products, MVPs for funded startups, marketplaces, customer portals and internal tools.",
+      time: "4 to 16 weeks (MVP to full platform)",
+      deliverables: [
+        "Custom web/mobile applications",
+        "Scalable backend infrastructure",
+        "User authentication and data management",
+        "Deployment to chosen environment",
+      ],
+      process: [
+        "Define core features and user stories",
+        "Design and prototype key interfaces",
+        "Develop in agile sprints",
+        "Test, refine, and deploy",
+      ],
+    },
+  },
+  {
+    id: "ecommerce-websites",
+    name: "E-commerce and websites",
+    icon: "🛒",
+    service: {
+      name: "E-commerce and websites",
+      description: "Business websites and online stores with payments, delivery and compliance set up properly.",
+      time: "2 to 8 weeks",
+      deliverables: [
+        "Fully functional business website or online store",
+        "Secure payment gateway integration",
+        "Shipping and delivery setup",
+        "Compliance (GDPR, accessibility) considerations",
+      ],
+      process: [
+        "Understand your brand and sales goals",
+        "Design user experience and visual layout",
+        "Build and configure platform",
+        "Test, launch, and optimize",
+      ],
+    },
+  },
+  {
+    id: "integrations-automation",
+    name: "Integrations and automation",
+    icon: "🔗",
+    service: {
+      name: "Integrations and automation",
+      description: "Joining up payments, CRM, inventory and the systems that were never designed to talk to each other.",
+      time: "2 to 6 weeks",
+      deliverables: [
+        "Seamless data flow between systems",
+        "Automated workflows to reduce manual tasks",
+        "Custom APIs or middleware if needed",
+        "Monitoring and error handling solutions",
+      ],
+      process: [
+        "Audit existing systems and data flows",
+        "Map integration points and automation opportunities",
+        "Implement connections and custom logic",
+        "Test, validate, and document integrations",
+      ],
+    },
+  },
+  {
+    id: "launch-grow",
+    name: "Launch and grow",
+    icon: "🚀",
+    service: {
+      name: "Launch and grow",
+      description: "Hosting, support and ongoing development come as standard. We don’t disappear after launch.",
+      time: "Ongoing (post-launch support)",
+      deliverables: [
+        "Reliable hosting and infrastructure management",
+        "Continuous monitoring and security updates",
+        "Dedicated technical support",
+        "Ongoing feature development and scaling",
+      ],
+      process: [
+        "Deploy to production environment",
+        "Establish monitoring and support channels",
+        "Plan for iterative improvements and new features",
+        "Provide regular performance reviews and recommendations",
       ],
     },
   },
@@ -131,7 +132,7 @@ export function ServicesSection() {
             What We Do
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
-            Beyond the packages: custom work, scoped and quoted after a call.
+            You bring the market, the relationships and the problem worth solving. We bring everything else.
           </p>
         </div>
 
