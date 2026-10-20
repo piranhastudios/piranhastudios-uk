@@ -29,7 +29,7 @@ const faqs = [
   {
     question: "Where are you based, and do you work with clients outside Stoke-on-Trent?",
     answer:
-      "We're based in Stoke-on-Trent, Staffordshire. We meet clients in person across Stoke-on-Trent and Staffordshire, and work remotely with founders and SMEs throughout the UK. Everything we build is delivered and supported online, so your location doesn't change the price or the timeline.",
+      "We're based in the West Midlands. We meet clients in person across the region, and work remotely with founders and SMEs throughout the UK. Everything we build is delivered and supported online, so your location doesn't change the price or the timeline.",
   },
   {
     question: "What kind of projects do you take on?",

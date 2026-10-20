@@ -33,16 +33,16 @@ export function PortfolioHero() {
             <div className="flex items-center justify-center mb-4">
               <Code className="h-8 w-8 text-[#fca5a5]" />
             </div>
-            <h3 className="text-3xl font-bold text-[#e5e7eb] mb-2">10+</h3>
-            <p className="text-[#9ca3af]">Projects Delivered</p>
+            <h3 className="text-3xl font-bold text-[#e5e7eb] mb-2">8</h3>
+            <p className="text-[#9ca3af]">Projects Listed</p>
           </div>
 
           <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-lg hover:shadow-[#fca5a5]/20 transition-all duration-500 hover:scale-105">
             <div className="flex items-center justify-center mb-4">
               <Users className="h-8 w-8 text-[#fca5a5]" />
             </div>
-            <h3 className="text-3xl font-bold text-[#e5e7eb] mb-2">5</h3>
-            <p className="text-[#9ca3af]">Happy Clients</p>
+            <h3 className="text-3xl font-bold text-[#e5e7eb] mb-2">8</h3>
+            <p className="text-[#9ca3af]">Clients / Projects</p>
           </div>
 
           <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-lg hover:shadow-[#fca5a5]/20 transition-all duration-500 hover:scale-105">

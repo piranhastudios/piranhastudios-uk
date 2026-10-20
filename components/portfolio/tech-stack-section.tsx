@@ -87,7 +87,7 @@ export function TechStackSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-[#e5e7eb] to-[#9ca3af] bg-clip-text text-transparent">
-            Technology Stack (2025)
+            Technology Stack
           </h2>
           <p className="text-xl text-[#9ca3af] max-w-3xl mx-auto">
             Modern, type-safe, and scalable technologies for building enterprise-grade applications without vendor
@@ -147,7 +147,7 @@ export function TechStackSection() {
               Founder-Aligned Model
             </h3>
             <p className="text-[#9ca3af] leading-relaxed">
-              We don’t take equity or control, just a small upfront fee and a revenue share if you win. That means we only succeed when you do. You stay in charge. We stay accountable.
+              On the right projects we can work for a share of the upside — when you win, we win. We usually propose a small upfront fee and, where appropriate, a revenue share or structured success fee. You keep control of your business and your IP; we remain accountable for delivery.
             </p>
           </div>
         </div>

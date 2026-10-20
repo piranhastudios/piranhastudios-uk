@@ -17,6 +17,19 @@ const ownProjects = [
     githubUrl: null
   },
   {
+    title: "StoreFactory",
+    description:
+      "Our own product and a showcase of our stack. Describe your business in plain English and get a live one back: website, bookings, shop, content, email marketing and your own domain. Free to start, with no transaction fees.",
+    tech: ["Next.js", "Supabase", "Medusa.js", "Stripe"],
+    status: "Active",
+    revenue: "Product-led; free to start",
+    users: "Used by several client stores",
+    image: "/images/placeholder.jpg",
+    featured: false,
+    liveUrl: null,
+    githubUrl: null
+  },
+  {
     title: "Habitate.uk",
     description:
       "A mobile-first co-living subscription platform allowing members to live flexibly across a network of managed homes. For a fixed monthly fee, tenants can move between properties in different cities, solving London’s cost crisis and Northern under-occupancy. The app handles payments, property discovery, room switching, and tenant onboarding.",
